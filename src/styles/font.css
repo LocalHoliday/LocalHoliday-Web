@@ -136,4 +136,17 @@
 
 :root {
   --font-primary: 'SUIT', sans-serif;
+  --font-H1: 56px;
+  --font-H2: 42px;
+  --font-H3: 32px;
+  --font-H4: 26px;
+  --font-H5: 24px;
+  --font-B1: 16px;
+  --font-B2: 14px;
+  --font-B3: 9px;
+  --font-B: 800;
+  --font-SB: 600;
+  --font-M: 500;
+  --font-R: 400;
+  --font-T: 100;
 }

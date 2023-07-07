@@ -958,3 +958,8 @@
 .pr-200 {
   padding-right: 200px;
 }
+
+:root {
+  --spacing-main: 120px;
+  --spacing-nav: 80px;
+}
