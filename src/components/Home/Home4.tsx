@@ -16,12 +16,19 @@ export default function Home4() {
                   <h3>모바일 환경에서도 로컬홀리데이를 즐겨보세요.</h3>
                 </div>
               </TextContainer>
-              <Image
-                src="../assets/img/home4.svg"
-                alt="home1"
-                width={600}
-                height={400}
-              ></Image>
+              <div style={{ display: 'flex' }}>
+                <Image
+                  src="../assets/img/home4.svg"
+                  alt="home1"
+                  width={600}
+                  height={400}
+                ></Image>
+                <img
+                  src="../assets/img/home4_2.svg"
+                  alt="home4_2"
+                  style={{ width: '100px' }}
+                ></img>
+              </div>
             </div>
           ) : (
             <div style={{ display: 'flex' }}>
