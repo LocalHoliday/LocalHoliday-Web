@@ -18,6 +18,4 @@ export default function Home() {
   )
 }
 
-const Spacing = styled.div`
-  margin: 50px;
-`
+const Spacing = styled.div``

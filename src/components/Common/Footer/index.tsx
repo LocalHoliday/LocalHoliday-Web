@@ -5,7 +5,6 @@ import { media } from '@/styles/media'
 export default function Footer() {
   return (
     <>
-      <Spacing />
       <FooterStyle>
         <FooterTerms>
           <ul>
@@ -27,10 +26,6 @@ export default function Footer() {
     </>
   )
 }
-
-const Spacing = styled.div`
-  margin: 10rem;
-`
 
 const FooterStyle = styled.div`
   border-top: 1px solid #eee;

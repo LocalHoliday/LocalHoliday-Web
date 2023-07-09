@@ -1,6 +1,7 @@
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
-import { Container, SubContainer, TextContainer } from './HomeStyle'
-
+import { SubContainer, TextContainer } from './HomeStyle'
+import styled from '@emotion/styled'
+import { media } from '@/styles/media'
 import Image from 'next/image'
 
 export default function Home1() {
@@ -22,7 +23,7 @@ export default function Home1() {
                 </div>
               </TextContainer>
               <Image
-                src="../assets/img/home1_mobile.svg"
+                src="../assets/img/home1.svg"
                 alt="home1"
                 width={400}
                 height={400}
@@ -52,3 +53,23 @@ export default function Home1() {
     </>
   )
 }
+
+export const Container = styled.div`
+  height: auto;
+  overflow: hidden;
+  opacity: 1;
+  transform: none;
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(
+    111.3deg,
+    #f1f5ff 0.71%,
+    #ccfff9 97.79%,
+    #ccfff9 97.79%
+  );
+  min-height: 35rem;
+
+  ${media.mobile} {
+    min-height: 20rem;
+  }
+`

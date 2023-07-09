@@ -1,8 +1,10 @@
 import Image from 'next/image'
 
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
-import { Container, SubContainer, TextContainer, Button } from './HomeStyle'
+import { SubContainer, TextContainer, Button } from './HomeStyle'
 import { useRouter } from 'next/router'
+import styled from '@emotion/styled'
+import { media } from '@/styles/media'
 
 export default function Home2() {
   const isMobile = useResponsiveMobile()
@@ -60,3 +62,20 @@ export default function Home2() {
     </>
   )
 }
+export const Container = styled.div`
+  height: auto;
+  opacity: 1;
+  transform: none;
+  width: 100%;
+  position: relative;
+  background-image: radial-gradient(
+    76.81% 163.66% at 85.69% 28.49%,
+    #eff4ff 0%,
+    #e4fffc 100%
+  );
+  min-height: 35rem;
+
+  ${media.mobile} {
+    min-height: 20rem;
+  }
+`
