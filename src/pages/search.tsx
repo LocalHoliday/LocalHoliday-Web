@@ -4,7 +4,7 @@ export default function index() {
   return (
     <>
       <Nav />
-      <h1> 추천</h1>
+      <h1> 찾기</h1>
       <Footer />
     </>
   )
