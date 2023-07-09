@@ -164,31 +164,31 @@ export const TextContainer = styled.div`
 `
 export const Button = styled.div`
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   border: 1px solid var(--color-gray500);
   border-radius: 10px;
   background-color: transparent;
   font-weight: var(--font-R);
   ${media.large} {
-    padding-top: 12px;
     font-size: var(--font-H4);
     width: 375px;
     height: 70px;
   }
   ${media.medium} {
-    padding-top: 14px;
     font-size: var(--font-B1);
     width: 275px;
     height: 50px;
   }
   ${media.small} {
-    padding-top: 10px;
     font-size: var(--font-B3);
     width: 150px;
     height: 30px;
   }
   ${media.mobile} {
-    padding-top: 7px;
     font-size: 6px;
     width: 80px;
     height: 30px;

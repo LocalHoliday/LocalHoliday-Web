@@ -22,7 +22,7 @@ export default function Home1() {
                 </div>
               </TextContainer>
               <Image
-                src="../assets/img/home1.svg"
+                src="../assets/img/home1_mobile.svg"
                 alt="home1"
                 width={400}
                 height={400}
