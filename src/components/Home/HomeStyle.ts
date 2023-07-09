@@ -84,7 +84,7 @@ export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 100px;
+  padding-top: 4rem;
 
   gap: 24px;
   h1 {
@@ -106,7 +106,7 @@ export const TextContainer = styled.div`
     }
 
     img {
-      padding-top: 2rem;
+      padding-top: 1rem;
       width: 300px;
     }
   }

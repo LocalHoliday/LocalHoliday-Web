@@ -55,7 +55,7 @@ const FooterCopyright = styled.div`
     font-size: 5px;
   }
   ${media.mobile} {
-    font-size: 2px;
+    font-size: 8px;
   }
 `
 
@@ -100,7 +100,7 @@ const FooterTerms = styled.div`
     }
   }
   ${media.mobile} {
-    font-size: 0.5px;
+    font-size: 5px;
     li {
       padding-top: 2rem;
       padding-right: 15px;

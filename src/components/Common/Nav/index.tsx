@@ -123,7 +123,7 @@ const NavbarLinks = styled.div`
   ${media.mobile} {
     flex-direction: column;
     a {
-      font-size: 3px;
+      font-size: 10px;
     }
   }
 `
