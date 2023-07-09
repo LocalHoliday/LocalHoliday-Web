@@ -17,7 +17,6 @@ export default function LocalHolidayRecommendItem({
   tourList,
   date,
 }: ILocalHolidayRecommendItem) {
-  console.log(tourList)
   return (
     <>
       <div className="col-lg-4">
