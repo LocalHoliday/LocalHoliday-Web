@@ -1,5 +1,3 @@
-import styled from '@emotion/styled'
-import { media } from '@/styles/media'
 import { Container, SubContainer, TextContainer, Button } from './HomeStyle'
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 import Image from 'next/image'

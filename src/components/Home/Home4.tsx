@@ -1,7 +1,4 @@
-import styled from '@emotion/styled'
-import { useState, useEffect } from 'react'
-import { useMediaQuery } from 'react-responsive'
-import { Container, SubContainer, TextContainer, Button } from './HomeStyle'
+import { Container, SubContainer, TextContainer } from './HomeStyle'
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 import Image from 'next/image'
 

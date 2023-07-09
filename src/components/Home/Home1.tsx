@@ -1,11 +1,7 @@
-import useResponsive1000 from '@/hooks/responsive/useResponsive1000'
-import useResponsive1300 from '@/hooks/responsive/useResponsive1300'
-import useResponsive800 from '@/hooks/responsive/useResponsive800'
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 import { Container, SubContainer, TextContainer } from './HomeStyle'
-import styled from '@emotion/styled'
+
 import Image from 'next/image'
-import { media } from '@/styles/media'
 
 export default function Home1() {
   const isMobile = useResponsiveMobile()
