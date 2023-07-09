@@ -1,37 +1,61 @@
-import { Navbar } from 'react-bootstrap'
+import { Navbar, Container, NavDropdown } from 'react-bootstrap'
 import styled from '@emotion/styled'
 import NavL from 'react-bootstrap/Nav'
 import Link from 'next/link'
 import Image from 'next/image'
 import { media } from '@/styles/media'
+import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 
 export default function Nav() {
+  const isMobile = useResponsiveMobile()
   return (
     <NavContainer>
       <Navbar expand="lg">
-        <Navbar.Brand>
-          <Logo>
-            <Link href="/">
-              <Image
-                src="../assets/img/logo.svg"
-                width={200}
-                height={180}
-                alt="nav"
-              ></Image>
-            </Link>
-          </Logo>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <NavL className="mr-auto">
-            <NavbarLinks>
-              <Link href="/recommend">추천</Link>
-              <Link href="/search">로컬홀리데이 찾기</Link>
-              <Link href="/my">나의 로컬홀리데이</Link>
-              <Link href="/login">로그인</Link>
-            </NavbarLinks>
-          </NavL>
-        </Navbar.Collapse>
+        <Container>
+          <Navbar.Brand>
+            <Logo>
+              <Link href="/">
+                <Image
+                  src="../assets/img/logo.svg"
+                  width={200}
+                  height={180}
+                  alt="nav"
+                ></Image>
+              </Link>
+            </Logo>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <NavL className="mr-auto">
+              <NavbarLinks>
+                {isMobile ? (
+                  <>
+                    <List>
+                      <Link href="/recommend">추천</Link>
+                    </List>
+                    <List>
+                      <Link href="/search">로컬홀리데이 찾기</Link>
+                    </List>
+
+                    <List>
+                      <Link href="/my">나의 로컬홀리데이</Link>
+                    </List>
+                    <List>
+                      <Link href="/login">로그인</Link>
+                    </List>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/recommend">추천</Link>
+                    <Link href="/search">로컬홀리데이 찾기</Link>
+                    <Link href="/my">나의 로컬홀리데이</Link>
+                    <Link href="/login">로그인</Link>
+                  </>
+                )}
+              </NavbarLinks>
+            </NavL>
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
     </NavContainer>
   )
@@ -107,23 +131,24 @@ const NavbarLinks = styled.div`
   }
 
   ${media.medium} {
-    display: flex;
-
     a {
       font-size: var(--font-B1);
     }
   }
   ${media.small} {
-    flex-direction: column;
     a {
-      padding: 10px;
       font-size: var(--font-B3);
     }
   }
   ${media.mobile} {
-    flex-direction: column;
     a {
-      font-size: 10px;
+      font-size: 5px;
     }
+  }
+`
+const List = styled.div`
+  ${media.mobile} {
+    align-items: center;
+    justify-content: center;
   }
 `
