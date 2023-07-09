@@ -1,6 +1,8 @@
-import { Container, SubContainer, TextContainer } from './HomeStyle'
+import { SubContainer, TextContainer } from './HomeStyle'
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 import Image from 'next/image'
+import styled from '@emotion/styled'
+import { media } from '@/styles/media'
 
 export default function Home4() {
   const isMobile = useResponsiveMobile()
@@ -59,3 +61,24 @@ export default function Home4() {
     </>
   )
 }
+
+export const Container = styled.div`
+  height: auto;
+  opacity: 1;
+  transform: none;
+  width: 100%;
+  position: relative;
+  background-image: radial-gradient(
+    111.44% 424.44% at 105.62% 87.63%,
+    #c8fff8 0%,
+    #f0ffff 22.4%,
+    #fcf7ff 54.79%,
+    #eff5ff 78.65%,
+    #e1ecff 100%
+  );
+  min-height: 35rem;
+
+  ${media.mobile} {
+    min-height: 20rem;
+  }
+`

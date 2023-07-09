@@ -1,36 +1,9 @@
 import styled from '@emotion/styled'
 import { media } from '@/styles/media'
 
-export const Container = styled.section`
-  opacity: 1;
-  transform: none;
-
-  width: 100vw;
-
-  position: relative;
-  background: linear-gradient(
-    111.3deg,
-    #f1f5ff 0.71%,
-    #ccfff9 97.79%,
-    #ccfff9 97.79%
-  );
-  ${media.large} {
-    height: 35rem;
-  }
-  ${media.medium} {
-    height: 30rem;
-  }
-  ${media.small} {
-    height: 28rem;
-  }
-  ${media.mobile} {
-    height: 24rem;
-  }
-`
-
 export const SubContainer = styled.div`
   display: flex;
-
+  padding-top: 2rem;
   align-items: center;
   gap: 160px;
   position: absolute;
@@ -40,7 +13,7 @@ export const SubContainer = styled.div`
     padding-left: 8rem;
     padding-right: 8rem;
     img {
-      padding-top: 5rem;
+      padding-top: 8rem;
       width: 500px;
     }
   }
@@ -50,7 +23,7 @@ export const SubContainer = styled.div`
     padding-right: 4rem;
 
     img {
-      padding-top: 2rem;
+      padding-top: 4rem;
       width: 400px;
       height: 350px;
     }
@@ -83,10 +56,12 @@ export const SubContainer = styled.div`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-top: 4rem;
+  //align-items: flex-start;
+  text-align: center;
 
-  gap: 24px;
+  justify-content: center;
+  align-content: center;
+
   h1 {
     font-family: var(--font-primary);
     font-weight: var(--font-SB);
