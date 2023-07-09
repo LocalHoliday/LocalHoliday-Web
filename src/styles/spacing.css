@@ -960,6 +960,9 @@
 }
 
 :root {
-  --spacing-main: 120px;
-  --spacing-nav: 80px;
+  --spacing-mainL: 120px;
+  --spacing-navL: 80px;
+  --spacing-navM: 60px;
+  --spacing-navS: 40px;
+  --spacing-navMB: 20px;
 }

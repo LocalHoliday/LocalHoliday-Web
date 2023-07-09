@@ -7,7 +7,7 @@ import '../styles/reset.css'
 import '../styles/font.css'
 import '../styles/colors.css'
 import '../styles/spacing.css'
-import Layout from '@/components/Layout'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient())

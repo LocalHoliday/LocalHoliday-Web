@@ -3,6 +3,7 @@ import Home2 from './Home2'
 import Home3 from './Home3'
 import Home4 from './Home4'
 import styled from '@emotion/styled'
+import { media } from '@/styles/media'
 
 export default function Home() {
   return (
@@ -19,5 +20,5 @@ export default function Home() {
 }
 
 const Spacing = styled.div`
-  margin: 3rem;
+  margin: 50px;
 `

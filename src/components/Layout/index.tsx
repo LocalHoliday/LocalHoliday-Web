@@ -1,4 +1,4 @@
-import Navbar from '../Common/Navbar'
+import Navbar from '../Common/Nav'
 import Footer from '../Common/Footer'
 
 const Layout = (children: any) => {

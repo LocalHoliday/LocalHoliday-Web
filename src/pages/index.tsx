@@ -1,12 +1,12 @@
-import Navbar from '@/components/Common/Navbar'
 import Home from '@/components/Home'
 import styled from '@emotion/styled'
 import Footer from '@/components/Common/Footer'
+import Nav from '@/components/Common/Nav'
 
 export default function index() {
   return (
     <>
-      <Navbar />
+      <Nav />
       <Home />
       <Footer />
     </>
