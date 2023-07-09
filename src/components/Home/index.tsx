@@ -19,5 +19,5 @@ export default function Home() {
 }
 
 const Spacing = styled.div`
-  margin: 3rem;
+  margin: 50px;
 `

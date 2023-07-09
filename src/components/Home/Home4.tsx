@@ -1,23 +1,54 @@
-import styled from '@emotion/styled'
+import { Container, SubContainer, TextContainer } from './HomeStyle'
+import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
+import Image from 'next/image'
 
 export default function Home4() {
+  const isMobile = useResponsiveMobile()
   return (
     <>
-      <Container />
+      <Container>
+        <SubContainer>
+          {isMobile ? (
+            <div>
+              <TextContainer>
+                <div>
+                  <h1>지금 바로 로컬 홀리데이를 즐겨보세요!</h1>
+                  <h3>모바일 환경에서도 로컬홀리데이를 즐겨보세요.</h3>
+                </div>
+              </TextContainer>
+              <Image
+                src="../assets/img/home4.svg"
+                alt="home1"
+                width={600}
+                height={400}
+              ></Image>
+            </div>
+          ) : (
+            <div style={{ display: 'flex' }}>
+              <TextContainer>
+                <div>
+                  <h1>지금 바로 로컬 홀리데이를 즐겨보세요!</h1>
+                  <h3>모바일 환경에서도 로컬홀리데이를 즐겨보세요.</h3>
+
+                  <Image
+                    src="../assets/img/home4_2.svg"
+                    alt="home1"
+                    width={150}
+                    height={150}
+                  ></Image>
+                </div>
+              </TextContainer>
+
+              <Image
+                src="../assets/img/home4.svg"
+                alt="home1"
+                width={600}
+                height={500}
+              ></Image>
+            </div>
+          )}
+        </SubContainer>
+      </Container>
     </>
   )
 }
-
-const Container = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 35rem;
-  background: radial-gradient(
-    111.44% 424.44% at 105.62% 87.63%,
-    #c8fff8 0%,
-    #f0ffff 22.4%,
-    #fcf7ff 54.79%,
-    #eff5ff 78.65%,
-    #e1ecff 100%
-  );
-`
