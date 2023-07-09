@@ -26,7 +26,7 @@ export default function Home3() {
                     </h3>
                     <div style={{ padding: '20px' }} />
                   </div>
-                  <div style={{ padding: '20px' }} />
+                  <div style={{ padding: '10px' }} />
                   <Button onClick={onClick}>자세히보기</Button>
                 </div>
               </TextContainer>

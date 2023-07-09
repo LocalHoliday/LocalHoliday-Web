@@ -24,9 +24,9 @@ export default function Home2() {
                     <h3>
                       지역에 특색에 맞는 일거리들과 놀거리들을 알려드려요.
                     </h3>
-                    <div style={{ padding: '30px' }} />
+                    <div style={{ padding: '10px' }} />
                   </div>
-                  <div style={{ padding: '30px' }} />
+                  <div style={{ padding: '20px' }} />
                   <Button onClick={onClick}>자세히보기</Button>
                 </div>
               </TextContainer>
