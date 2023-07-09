@@ -28,8 +28,8 @@ export default function Home1() {
               <Image
                 src="../assets/img/home1.svg"
                 alt="home1"
-                width={500}
-                height={500}
+                width={400}
+                height={400}
               ></Image>
             </div>
           ) : (
@@ -46,8 +46,8 @@ export default function Home1() {
               <Image
                 src="../assets/img/home1.svg"
                 alt="home1"
-                width={500}
-                height={500}
+                width={400}
+                height={400}
               ></Image>
             </div>
           )}
