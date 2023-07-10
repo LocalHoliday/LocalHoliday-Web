@@ -1,8 +1,15 @@
+import { GetBookListRes } from '@/types/review'
 import BreadCrumb from '../Common/BreadCrumb'
+import Spinner from '../Common/Spinner'
 import LocalHolidayBook from './LocalHolidayBook'
 import { LocalHolidayRecommend } from './LocalHolidayRecommend'
-
+import { useGetBookList } from '@/hooks/recommend/useGetBookList'
+import { useGetRecommendList } from '@/hooks/recommend/useGetRecommendList'
+import { GetRecommendListRes } from '@/types/recommend'
 export default function Recommend() {
+  const { data: bookList, isLoading: bookLoading } = useGetBookList()
+  const { data: recommendList, isLoading: recommendLoading } =
+    useGetRecommendList()
   return (
     <>
       <BreadCrumb
@@ -14,9 +21,17 @@ export default function Recommend() {
         breadImgIdx={0}
         isArea={false}
       />
-      <LocalHolidayRecommend />
-      <div className="pt-50" />
-      <LocalHolidayBook />
+      {bookLoading || recommendLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <LocalHolidayRecommend
+            recommendList={recommendList as GetRecommendListRes}
+          />
+          <div className="pt-50" />
+          <LocalHolidayBook bookList={bookList as GetBookListRes} />
+        </>
+      )}
     </>
   )
 }
