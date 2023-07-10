@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['www.agriwork.kr'],
+    domains: [
+      'www.agriwork.kr',
+      'localholiday.s3.ap-northeast-2.amazonaws.com',
+    ],
     remotePatterns: [
       {
         protocol: 'http',

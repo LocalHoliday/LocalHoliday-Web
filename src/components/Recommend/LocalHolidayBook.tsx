@@ -1,33 +1,37 @@
 import styled from '@emotion/styled'
-import { useGetRecommendList } from '@/hooks/recommend/useGetRecommendList'
 import RecommendBook from '../Common/RecommendTemplate/Book/RecommendBook'
+import { useGetBookList } from '@/hooks/recommend/useGetBookList'
 
 export default function LocalHolidayBook() {
-  const { data: recommendList, isLoading } = useGetRecommendList()
-  recommendList?.result.slice(0, 3).map((item) => {
-    console.log(item)
-  })
+  const { data: bookList, isLoading } = useGetBookList()
+  console.log(bookList)
 
   return (
     <Container>
-      <Title>📷 다른 사람들의 로컬홀리데이를 구경해보세요</Title>
+      {isLoading || bookList == undefined ? null : (
+        <div>
+          <Title>📷 다른 사람들의 로컬홀리데이를 구경해보세요</Title>
 
-      <div className="pt-50" />
-      <div className="row col-lg-12">
-        <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {recommendList?.result.slice(0, 3).map((item) => (
-            <RecommendBook
-              key={item.uuid}
-              img={item.photo}
-              title={item.title}
-              startTime={'2023.07.01'}
-              endTime={'2023.07.08'}
-              job={'알바'}
-              tourList={item.tourList}
-            />
-          ))}
+          <div className="pt-50" />
+          <div className="row col-lg-12">
+            <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
+              {isLoading
+                ? null
+                : bookList?.reviews?.map((item) => (
+                    <RecommendBook
+                      id={item.id}
+                      key={item.id}
+                      img={item.profile}
+                      title={item.title}
+                      content={item.content}
+                      billId={item.bill_id}
+                      userId={item.user_id}
+                    />
+                  ))}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </Container>
   )
 }

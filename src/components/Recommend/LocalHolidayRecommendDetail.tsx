@@ -34,70 +34,68 @@ export default function LocalHolidayRecommendDetail() {
   console.log(detailData)
   return (
     <>
-      <Container>
-        <div className="pt-50" />
-        <SubContainer>
-          <Image
-            src={detailData?.photo as string}
-            width={1000}
-            height={600}
-            alt="로컬홀리데이 추천 상세"
-            className="center-image"
-          />
+      {isLoading || detailData === undefined ? null : (
+        <Container>
           <div className="pt-50" />
-          <div
-            style={{
-              marginRight: 'auto',
-            }}
-          >
-            <TitleText>{detailData?.title as string}</TitleText>
-          </div>
-          <div className="pt-20" />
-
-          <RecommendBody label={detailData?.location} colorType="grayScale" />
-          <RecommendBodyDetail label="4박5일" colorType="mainColor" />
-          <div className="pt-60" />
-          <div style={{ display: 'flex' }}>
-            <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
-            <RecomText>에 딱맞는 로컬 일거리를 추천드려요!</RecomText>
-          </div>
-          <div className="pt-50" />
-          <CourseWorkDetail
-            img={detailData?.jobDTO.photo as string}
-            title={detailData?.jobDTO?.name as string}
-            location={detailData?.jobDTO?.addr as string}
-            date={jobDate}
-            pay={detailData?.jobDTO?.pay as number}
-          />
-
-          <div className="pt-100" />
-          <div style={{ display: 'flex' }}>
-            <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
-            <RecomText>에 딱맞는 로컬 놀거리를 추천드려요!</RecomText>
-          </div>
-          <div className="pt-50" />
-          <div className="row col-lg-12">
-            <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
-              {detailData?.tourList.map((item) => (
-                <CoursePlayDetail
-                  key={item.uuid}
-                  img={item.photo}
-                  title={item.name}
-                  location={item.addr}
-                  phone="010-1234-1234"
-                />
-              ))}
+          <SubContainer>
+            <Image
+              src={detailData?.photo as string}
+              width={1000}
+              height={600}
+              alt="로컬홀리데이 추천 상세"
+              className="center-image"
+            />
+            <div className="pt-50" />
+            <div
+              style={{
+                marginRight: 'auto',
+              }}
+            >
+              <TitleText>{detailData?.title as string}</TitleText>
             </div>
-          </div>
-        </SubContainer>
-      </Container>
+            <div className="pt-20" />
 
-      {/* <Image src={img} width={1200} height={550} alt="로컬홀리데이 추천 상세" />
-      <div className="pt-50" />
-      <RecommendDetailTitle title={title} />
-      <div className="pt-30" />
-      <RecommendBodyDetail label={location} colorType="grayScale" />
-      <RecommendBodyDetail label="4박5일" colorType="grayScale" /> */}
+            <RecommendBody label={detailData?.location} colorType="grayScale" />
+            <RecommendBodyDetail label="4박5일" colorType="mainColor" />
+            <div className="pt-60" />
+            <div style={{ display: 'flex' }}>
+              <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
+              <RecomText>에 딱맞는 로컬 일거리를 추천드려요!</RecomText>
+            </div>
+            <div className="pt-50" />
+            <CourseWorkDetail
+              img={detailData?.jobDTO.photo as string}
+              title={detailData?.jobDTO?.name as string}
+              location={detailData?.jobDTO?.addr as string}
+              date={jobDate}
+              pay={detailData?.jobDTO?.pay as number}
+            />
+
+            <div className="pt-100" />
+            <div style={{ display: 'flex' }}>
+              <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
+              <RecomText>에 딱맞는 로컬 놀거리를 추천드려요!</RecomText>
+            </div>
+            <div className="pt-50" />
+            <div className="row col-lg-12">
+              <div
+                className="col"
+                style={{ display: 'flex', flexWrap: 'wrap' }}
+              >
+                {detailData?.tourList.map((item) => (
+                  <CoursePlayDetail
+                    key={item.uuid}
+                    img={item.photo}
+                    title={item.name}
+                    location={item.addr}
+                    phone="010-1234-1234"
+                  />
+                ))}
+              </div>
+            </div>
+          </SubContainer>
+        </Container>
+      )}
     </>
   )
 }

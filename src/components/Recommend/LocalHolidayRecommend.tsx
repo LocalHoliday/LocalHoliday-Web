@@ -7,7 +7,7 @@ export function LocalHolidayRecommend() {
 
   return (
     <Container>
-      {isLoading ? null : (
+      {isLoading || recommendList == undefined ? null : (
         <>
           <div className=" ml-50 pt-50"></div>
           <Title>
@@ -16,16 +16,20 @@ export function LocalHolidayRecommend() {
           <div className="pt-50" />
           <div className="row col-lg-12">
             <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
-              {recommendList?.result.slice(0, 3).map((item) => (
-                <RecommendCourse
-                  key={item.uuid}
-                  courseId={item.uuid}
-                  img={item.photo}
-                  title={item.title}
-                  area={item.location}
-                  tourList={item.tourList}
-                />
-              ))}
+              {isLoading || recommendList === undefined
+                ? null
+                : recommendList?.result
+                    .slice(0, 3)
+                    .map((item) => (
+                      <RecommendCourse
+                        key={item.uuid}
+                        courseId={item.uuid}
+                        img={item.photo}
+                        title={item.title}
+                        area={item.location}
+                        tourList={item.tourList}
+                      />
+                    ))}
             </div>
           </div>
         </>
