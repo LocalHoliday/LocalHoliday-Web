@@ -1,6 +1,6 @@
 import { useGetRecommendList } from '@/hooks/recommend/useGetRecommendList'
 import styled from '@emotion/styled'
-import LocalHolidayRecommendItem from './LocalHolidayRecommendItem'
+import RecommendCourse from '../Common/RecommendTemplate/Course'
 
 export function LocalHolidayRecommend() {
   const { data: recommendList, isLoading } = useGetRecommendList()
@@ -17,7 +17,7 @@ export function LocalHolidayRecommend() {
           <div className="row col-lg-12">
             <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
               {recommendList?.result.slice(0, 3).map((item) => (
-                <LocalHolidayRecommendItem
+                <RecommendCourse
                   key={item.uuid}
                   img={item.photo}
                   title={item.title}
