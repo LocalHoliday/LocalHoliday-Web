@@ -34,7 +34,9 @@ export default function LocalHolidayRecommendDetail() {
   console.log(detailData)
   return (
     <>
-      {isLoading || detailData === undefined ? null : (
+      {isLoading || detailData === undefined ? (
+        <h1>null</h1>
+      ) : (
         <Container>
           <div className="pt-50" />
           <SubContainer>

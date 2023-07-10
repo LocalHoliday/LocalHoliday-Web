@@ -1,5 +1,4 @@
 import * as styles from './RecommendBody.style'
-import { COLORS } from '@/styles/colors'
 
 export type colorType = 'mainColor' | 'grayScale'
 
