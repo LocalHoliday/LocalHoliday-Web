@@ -16,7 +16,7 @@ export function LocalHolidayRecommend({ recommendList }: RecommendListProps) {
         <div className="pt-50" />
         <div className="row col-lg-12">
           <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {recommendList?.result.slice(0, 3).map((item) => (
+            {recommendList?.result.map((item) => (
               <RecommendCourse
                 key={item.uuid}
                 courseId={item.uuid}
