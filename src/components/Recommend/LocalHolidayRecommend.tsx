@@ -19,6 +19,7 @@ export function LocalHolidayRecommend() {
               {recommendList?.result.slice(0, 3).map((item) => (
                 <RecommendCourse
                   key={item.uuid}
+                  courseId={item.uuid}
                   img={item.photo}
                   title={item.title}
                   area={item.location}

@@ -6,6 +6,7 @@ import { COLORS } from '@/styles/colors'
 import { useRouter } from 'next/router'
 
 interface ICourseItem {
+  courseId: string
   img: string
   title: string
   area: string
@@ -14,6 +15,7 @@ interface ICourseItem {
 }
 
 export default function RecommendCourse({
+  courseId,
   img,
   title,
   area,
@@ -22,7 +24,10 @@ export default function RecommendCourse({
 }: ICourseItem) {
   const router = useRouter()
   const onClick = () => {
-    router.push(`/recommend/course/${title}`)
+    router.push({
+      pathname: `/recommend/course/${title}`,
+      query: { courseId: courseId },
+    })
   }
   return (
     <div className="col-lg-4">

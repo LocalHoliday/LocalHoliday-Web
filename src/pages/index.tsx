@@ -5,9 +5,7 @@ import Nav from '@/components/Common/Nav'
 export default function index() {
   return (
     <>
-      <Nav />
       <Home />
-      <Footer />
     </>
   )
 }
