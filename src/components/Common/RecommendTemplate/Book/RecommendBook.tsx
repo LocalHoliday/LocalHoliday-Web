@@ -5,29 +5,39 @@ import RecommendBody from '../Body'
 import { COLORS } from '@/styles/colors'
 import { useRouter } from 'next/router'
 import Hashtag from '../../Hashtag'
+import styled from '@emotion/styled'
 
 interface RecommendBookProps {
+  id: string
   img: string
   title: string
-  startTime: string
-  endTime: string
-  job: string
-  tourList: ITourRecomData[]
+  billId: string
+  userId: string
+  content: string
 }
 
 export default function RecommendBook({
+  id,
   img,
   title,
-  startTime,
-  endTime,
-  job,
-  tourList,
+  billId,
+  userId,
+  content,
 }: RecommendBookProps) {
   const router = useRouter()
   const onClick = () => {
-    router.push(`/recommend/book/${title}`)
+    router.push(
+      {
+        pathname: `/recommend/book/${title}`,
+        query: {
+          id: id,
+          billId: billId,
+          userId: userId,
+        },
+      },
+      `/recommend/book/${title}`,
+    )
   }
-  const date = `${startTime} ~ ${endTime}`
 
   return (
     <div className="col-lg-4">
@@ -36,24 +46,16 @@ export default function RecommendBook({
         <div className="pt-20" />
         <RecommendTitle title={title} />
         <div className="pt-10" />
-        <div style={{ display: 'flex' }}>
-          <RecommendBody
-            label={date.concat(`${'\u00A0'}`)}
-            colorType="grayScale"
-          />
-          <RecommendBody label="4박5일" colorType="mainColor" />
-        </div>
-        <div className="pt-10" />
-        <Hashtag label={job} />
-        <div className="pt-10" />
-        <div>
-          {tourList?.map((item) => (
-            <div key={tourList.indexOf(item)}>
-              <RecommendBody label={item.name} colorType="mainColor" />
-            </div>
-          ))}
-        </div>
+        <Body>{content}</Body>
       </div>
     </div>
   )
 }
+
+const Body = styled.div`
+  font-family: var(--font-primary);
+  font-weight: var(--font-M);
+  font-size: var(--font-B1);
+  width: 400px;
+  color: ${COLORS.grayscale.gray500};
+`

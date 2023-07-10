@@ -5,7 +5,7 @@ interface RecommendTitleProps {
 }
 
 export const RecommendDetailTitle = ({ title }: RecommendTitleProps) => (
-  <styles.RecommendDetialTitle>{title}</styles.RecommendDetialTitle>
+  <styles.RecommendDetailTitle>{title}</styles.RecommendDetailTitle>
 )
 
 export default RecommendDetailTitle
