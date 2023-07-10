@@ -123,7 +123,7 @@ export const TextContainer = styled.div`
       font-size: var(--font-B2);
     }
     h3 {
-      font-size: 5px;
+      font-size: 12px;
     }
     flex-direction: column;
 

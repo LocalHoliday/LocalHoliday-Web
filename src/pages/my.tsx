@@ -5,7 +5,7 @@ export default function index() {
   return (
     <>
       <Nav />
-      <h1>로그인</h1>
+      <h1>마이</h1>
       <Footer />
     </>
   )

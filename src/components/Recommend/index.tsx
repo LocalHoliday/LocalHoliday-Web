@@ -1,4 +1,5 @@
 import BreadCrumb from '../Common/BreadCrumb'
+import LocalHolidayBook from './LocalHolidayBook'
 import { LocalHolidayRecommend } from './LocalHolidayRecommend'
 
 export default function Recommend() {
@@ -14,6 +15,8 @@ export default function Recommend() {
         isArea={false}
       />
       <LocalHolidayRecommend />
+      <div className="pt-50" />
+      <LocalHolidayBook />
     </>
   )
 }

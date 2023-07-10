@@ -14,7 +14,7 @@ export interface IMainRecomData {
   title: string
   location: string
   photo: string
-  jodDto: IJobData
+  jobDTO: IJobData
   tourList: ITourRecomData[]
 }
 

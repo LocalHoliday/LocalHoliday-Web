@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { COLORS } from '@/styles/colors'
 
 type category = 'recom' | 'search' | 'my' | 'area'
 
@@ -76,5 +77,5 @@ const Title = styled.div`
 const SubTitle = styled.div`
   font-size: var(--font-B1);
   font-weight: var(--font-M);
-  color: var(--color-gray500);
+  color: ${COLORS.grayscale.gray500};
 `

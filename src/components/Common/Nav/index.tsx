@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { media } from '@/styles/media'
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
+import LogoImg from '../../../../public/assets/img/logo.svg'
 
 export default function Nav() {
   const isMobile = useResponsiveMobile()
@@ -15,12 +16,7 @@ export default function Nav() {
           <Navbar.Brand>
             <Logo>
               <Link href="/">
-                <Image
-                  src="../assets/img/logo.svg"
-                  width={200}
-                  height={180}
-                  alt="nav"
-                ></Image>
+                <Image src={LogoImg} width={200} height={180} alt="nav"></Image>
               </Link>
             </Logo>
           </Navbar.Brand>

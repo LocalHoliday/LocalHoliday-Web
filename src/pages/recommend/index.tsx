@@ -4,9 +4,7 @@ import Recommend from '@/components/Recommend'
 export default function index() {
   return (
     <>
-      <Nav />
       <Recommend />
-      <Footer />
     </>
   )
 }
