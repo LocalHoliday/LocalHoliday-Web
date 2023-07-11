@@ -42,7 +42,13 @@ export default function RecommendBook({
   return (
     <div className="col-lg-4">
       <div style={{ cursor: 'pointer' }} onClick={onClick}>
-        <Image src={img} width={400} height={300} alt="로컬홀리데이북 조회" />
+        <Image
+          src={img}
+          width={400}
+          height={300}
+          alt="로컬홀리데이북 조회"
+          priority
+        />
         <div className="pt-20" />
         <RecommendTitle title={title} />
         <div className="pt-10" />

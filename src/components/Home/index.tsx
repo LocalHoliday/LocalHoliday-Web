@@ -8,14 +8,11 @@ export default function Home() {
   return (
     <>
       <Home1 />
-      <Spacing />
       <Home2 />
-      <Spacing />
+
       <Home3 />
-      <Spacing />
+
       <Home4 />
     </>
   )
 }
-
-const Spacing = styled.div``

@@ -3,7 +3,7 @@ import { RecommendBodyProps } from './RecommendBody'
 import { COLORS } from '@/styles/colors'
 import { colorType } from './RecommendBody'
 
-export const RecommendBody = styled.p<RecommendBodyProps>`
+export const RecommendBody = styled.div<RecommendBodyProps>`
   font-family: var(--font-primary);
   font-weight: var(--font-M);
   font-size: var(--font-B1);
@@ -14,7 +14,7 @@ export const RecommendBody = styled.p<RecommendBodyProps>`
       : COLORS.grayscale.gray500};
 `
 
-export const RecommendDetailBody = styled.p<RecommendBodyProps>`
+export const RecommendDetailBody = styled.div<RecommendBodyProps>`
   font-family: var(--font-primary);
   font-weight: var(--font-M);
   font-size: var(--font-B1);

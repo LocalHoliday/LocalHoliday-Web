@@ -1,7 +1,12 @@
 import { GetBookListRes } from '@/types/review'
-import nodeClient from './nodeClient'
+
+import apiClient from './client'
 
 export const getBookList = async (): Promise<GetBookListRes> => {
-  const res = await nodeClient.get('/review')
-  return res.data
+  try {
+    const res = await apiClient.get('/api/node/review')
+    return res.data
+  } catch (error) {
+    throw error
+  }
 }

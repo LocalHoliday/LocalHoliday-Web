@@ -37,6 +37,7 @@ export default function Home2() {
                 width={450}
                 height={400}
                 alt="nav"
+                priority
               ></Image>
             </div>
           ) : (
@@ -46,12 +47,13 @@ export default function Home2() {
                 width={450}
                 height={400}
                 alt="nav"
+                priority
               ></Image>
               <TextContainer>
                 <div>
                   <h1>지역별로 일거리들과 놀거리들을 한번에!</h1>
                   <h3>지역에 특색에 맞는 일거리들과 놀거리들을 알려드려요.</h3>
-                  <div style={{ padding: '30px' }} />
+                  <div className="pt-30"></div>
                   <Button onClick={onClick}>자세히보기</Button>
                 </div>
               </TextContainer>

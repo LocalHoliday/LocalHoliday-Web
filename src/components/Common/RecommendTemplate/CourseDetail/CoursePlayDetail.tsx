@@ -18,7 +18,13 @@ export default function CoursePlayDetail({
     <>
       <div className="col-lg-6">
         <div style={{ display: 'flex' }}>
-          <Image src={img as string} width={300} height={300} alt="detail" />
+          <Image
+            src={img as string}
+            width={300}
+            height={300}
+            alt="detail"
+            priority
+          />
           <div className="pr-20" />
           <div>
             <RecommendTitle title={title} />

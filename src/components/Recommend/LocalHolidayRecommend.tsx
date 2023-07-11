@@ -13,10 +13,10 @@ export function LocalHolidayRecommend({ recommendList }: RecommendListProps) {
       <>
         <div className=" ml-50 pt-50"></div>
         <Title>🏖 이번 여름에 딱 맞는 로컬홀리데이 코스를 추천해드릴게요</Title>
-        <div className="pt-50" />
+        <div className="pt-50"></div>
         <div className="row col-lg-12">
           <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {recommendList?.result.slice(0, 3).map((item) => (
+            {recommendList?.result.map((item) => (
               <RecommendCourse
                 key={item.uuid}
                 courseId={item.uuid}

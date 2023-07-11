@@ -17,6 +17,18 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/api/node/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_KEY_NODE}/:path*`,
+      },
+      {
+        source: '/api/spring/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_KEY_SPRING}/:path*`,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

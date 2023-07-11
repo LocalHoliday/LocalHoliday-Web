@@ -22,7 +22,13 @@ export default function CourseWorkDetail({
   return (
     <>
       <div style={{ display: 'flex' }}>
-        <Image src={img as string} width={300} height={300} alt="detail" />
+        <Image
+          src={img as string}
+          width={300}
+          height={300}
+          alt="detail"
+          priority
+        />
         <div className="pr-20" />
         <div>
           <div className="pt-20" />
