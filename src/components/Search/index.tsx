@@ -61,7 +61,7 @@ export default function Search() {
     })
   }
   return (
-    <>
+    <div>
       <BreadCrumb
         title={'로컬 홀리데이 찾기'}
         subTitle={
@@ -92,7 +92,7 @@ export default function Search() {
                     onClick(item.text as string, item.id as number)
                   }
                 >
-                  <AreaSearchButton area={item.area} />
+                  <AreaSearchButton key={item.id} area={item.area} />
                   <div className="pt-10"></div>
                   <AreaText>{item.text}</AreaText>
                 </Button>
@@ -101,7 +101,7 @@ export default function Search() {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   )
 }
 const Title = styled.div`

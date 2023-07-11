@@ -1,6 +1,6 @@
 import { getBookList } from '@/apis/getBookList'
 import { GetBookListRes } from '@/types/bill'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from 'react-query'
 
 export const useGetBookList = () => {
   return useQuery<GetBookListRes>(['getBookList'], getBookList, {
