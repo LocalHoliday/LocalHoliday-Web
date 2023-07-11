@@ -10,12 +10,14 @@ import { COLORS } from '@/styles/colors'
 import CourseWorkDetail from '../Common/RecommendTemplate/CourseDetail/CourseWorkDetail'
 import RecommendBody from '../Common/RecommendTemplate/Body'
 import CoursePlayDetail from '../Common/RecommendTemplate/CourseDetail/CoursePlayDetail'
+import Spinner from '../Common/Spinner'
 
 export default function LocalHolidayRecommendDetail() {
   const { query } = useRouter()
   const recommendId = query.courseId
 
   const { data: recommendList, isLoading } = useGetRecommendList()
+
   const [detailData, setDetailData] = useState<IMainRecomData>()
   useEffect(() => {
     recommendList?.result.filter((item) => {
@@ -24,6 +26,7 @@ export default function LocalHolidayRecommendDetail() {
       }
     })
   }, [isLoading])
+
   const jobDate = `${detailData?.jobDTO?.startTime.substring(
     0,
     10,
@@ -33,7 +36,7 @@ export default function LocalHolidayRecommendDetail() {
   return (
     <>
       {isLoading || detailData === undefined ? (
-        <h1>null</h1>
+        <Spinner />
       ) : (
         <Container>
           <div className="pt-50"></div>
