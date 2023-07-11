@@ -25,9 +25,9 @@ export default function Home3() {
                       로컬 홀리데이를 추천받고, 내 로컬 홀리데이도 기록할 수
                       있으며 다른 사람들의 로컬 홀리데이도 구경해 볼 수 있어요!
                     </h3>
-                    <div style={{ padding: '20px' }} />
+                    <div className="pt-20"></div>
                   </div>
-                  <div style={{ padding: '10px' }} />
+                  <div className="pt-10"></div>
                   <Button onClick={onClick}>자세히보기</Button>
                 </div>
               </TextContainer>
@@ -36,6 +36,7 @@ export default function Home3() {
                 alt="home1"
                 width={500}
                 height={500}
+                priority
               ></Image>
             </div>
           ) : (
@@ -47,7 +48,7 @@ export default function Home3() {
                     로컬 홀리데이를 추천받고, 내 로컬 홀리데이도 기록할 수
                     있으며 다른 사람들의 로컬 홀리데이도 구경해 볼 수 있어요!
                   </h3>
-                  <div style={{ padding: '30px' }} />
+                  <div className="pt-30"></div>
                   <Button onClick={onClick}>자세히보기</Button>
                 </div>
               </TextContainer>
@@ -56,6 +57,7 @@ export default function Home3() {
                 alt="home1"
                 width={500}
                 height={500}
+                priority
               ></Image>
             </div>
           )}

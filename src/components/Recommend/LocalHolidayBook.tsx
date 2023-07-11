@@ -13,7 +13,7 @@ export default function LocalHolidayBook({ bookList }: LocalHolidayBookProps) {
       <div>
         <Title>📷 다른 사람들의 로컬홀리데이를 구경해보세요</Title>
 
-        <div className="pt-50" />
+        <div className="pt-50"></div>
         <div className="row col-lg-12">
           <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
             {bookList?.reviews?.map((item) => (

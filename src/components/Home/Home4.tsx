@@ -44,6 +44,7 @@ export default function Home4() {
                     alt="home1"
                     width={150}
                     height={150}
+                    priority
                   ></Image>
                 </div>
               </TextContainer>
@@ -53,6 +54,7 @@ export default function Home4() {
                 alt="home1"
                 width={600}
                 height={500}
+                priority
               ></Image>
             </div>
           )}

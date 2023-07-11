@@ -27,6 +27,7 @@ export default function Home1() {
                 alt="home1"
                 width={400}
                 height={400}
+                priority
               ></Image>
             </div>
           ) : (
@@ -45,6 +46,7 @@ export default function Home1() {
                 alt="home1"
                 width={400}
                 height={400}
+                priority
               ></Image>
             </div>
           )}

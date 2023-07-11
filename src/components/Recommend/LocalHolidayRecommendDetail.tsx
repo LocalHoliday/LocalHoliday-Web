@@ -36,16 +36,16 @@ export default function LocalHolidayRecommendDetail() {
         <h1>null</h1>
       ) : (
         <Container>
-          <div className="pt-50" />
+          <div className="pt-50"></div>
           <SubContainer>
             <Image
               src={detailData?.photo as string}
-              width={1000}
+              width={900}
               height={600}
               alt="로컬홀리데이 추천 상세"
               className="center-image"
             />
-            <div className="pt-50" />
+            <div className="pt-50"></div>
             <div
               style={{
                 marginRight: 'auto',
@@ -53,16 +53,16 @@ export default function LocalHolidayRecommendDetail() {
             >
               <TitleText>{detailData?.title as string}</TitleText>
             </div>
-            <div className="pt-20" />
+            <div className="pt-20"></div>
 
             <RecommendBody label={detailData?.location} colorType="grayScale" />
             <RecommendBodyDetail label="4박5일" colorType="mainColor" />
-            <div className="pt-60" />
+            <div className="pt-60"></div>
             <div style={{ display: 'flex' }}>
               <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
               <RecomText>에 딱맞는 로컬 일거리를 추천드려요!</RecomText>
             </div>
-            <div className="pt-50" />
+            <div className="pt-50"></div>
             <CourseWorkDetail
               img={detailData?.jobDTO.photo as string}
               title={detailData?.jobDTO?.name as string}
@@ -71,12 +71,12 @@ export default function LocalHolidayRecommendDetail() {
               pay={detailData?.jobDTO?.pay as number}
             />
 
-            <div className="pt-100" />
+            <div className="pt-100"></div>
             <div style={{ display: 'flex' }}>
               <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
               <RecomText>에 딱맞는 로컬 놀거리를 추천드려요!</RecomText>
             </div>
-            <div className="pt-50" />
+            <div className="pt-50"></div>
             <div className="row col-lg-12">
               <div
                 className="col"
@@ -110,9 +110,6 @@ const SubContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  .center-image {
-    margin: 0 auto; // This will center align the image horizontally
-  }
 `
 
 const RecomText = styled.div`
