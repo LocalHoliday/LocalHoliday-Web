@@ -1,21 +1,18 @@
 import { COLORS } from '@/styles/colors'
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import CourseWorkDetail from '../CourseDetail/CourseWorkDetail'
 import CoursePlayDetail from '../CourseDetail/CoursePlayDetail'
+import { useState } from 'react'
+
 interface RecommendBookDetailProps {
   title: string
   author: string
   img: string
   content: string
-  workPhoto: string
-  workTitle: string
-  workLocation: string
-  workDate: string
-  workPay: string
-  playPhoto: string
-  playTitle: string
-  playLocation: string
+  houseId: string
+  foodId: string
+  tourId: string
+  jobId: string
 }
 
 interface ColorProps {
@@ -27,15 +24,12 @@ export default function RecommendBookDetail({
   author,
   img,
   content,
-  workPhoto,
-  workTitle,
-  workLocation,
-  workDate,
-  workPay,
-  playPhoto,
-  playTitle,
-  playLocation,
+  houseId,
+  tourId,
+  jobId,
 }: RecommendBookDetailProps) {
+  const [playData, setPlayData] = useState('')
+  const [jodData, setJobData] = useState('')
   return (
     <>
       <Container>
@@ -54,13 +48,7 @@ export default function RecommendBookDetail({
             <Body color="gray"> 님의 로컬일자리</Body>
           </div>
           <div className="pt-50"></div>
-          <CourseWorkDetail
-            img={workPhoto}
-            title={workTitle}
-            location={workLocation}
-            date={workDate}
-            pay={parseInt(workPay)}
-          />
+          {}
           <div className="pt-60"></div>
           <div style={{ display: 'flex' }}>
             <Body color="main">{author}</Body>

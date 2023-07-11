@@ -7,7 +7,6 @@ export default function index() {
     <>
       <Nav />
       <SearchArea />
-
       <Footer />
     </>
   )
