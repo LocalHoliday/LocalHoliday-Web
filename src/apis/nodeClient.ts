@@ -1,7 +1,7 @@
 import axios from 'axios'
 import TokenService from '@/services/TokenService'
 
-const baseURL = 'http://15.165.241.113:8081'
+const baseURL = 'https://node.seungwoo.store'
 // axios 인스턴스 생성
 const nodeClient = axios.create({
   baseURL,

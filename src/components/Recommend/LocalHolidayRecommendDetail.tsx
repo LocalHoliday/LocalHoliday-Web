@@ -86,13 +86,14 @@ export default function LocalHolidayRecommendDetail() {
                 style={{ display: 'flex', flexWrap: 'wrap' }}
               >
                 {detailData?.tourList.map((item) => (
-                  <CoursePlayDetail
-                    key={item.uuid}
-                    img={item.photo}
-                    title={item.name}
-                    location={item.addr}
-                    phone="010-1234-1234"
-                  />
+                  <div className="col-lg-6" key={item.uuid}>
+                    <CoursePlayDetail
+                      img={item.photo}
+                      title={item.name}
+                      location={item.addr}
+                      phone="010-1234-1234"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
@@ -131,4 +132,10 @@ const TitleText = styled.div`
   font-family: var(--font-primary);
   font-weight: var(--font-SB);
   font-size: var(--font-H3);
+`
+const MainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `

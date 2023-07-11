@@ -4,6 +4,7 @@ const nextConfig = {
     domains: [
       'www.agriwork.kr',
       'localholiday.s3.ap-northeast-2.amazonaws.com',
+      'plus.unsplash.com',
     ],
     remotePatterns: [
       {

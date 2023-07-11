@@ -1,14 +1,12 @@
 import axios from 'axios'
 import TokenService from '@/services/TokenService'
 
-const baseURL = 'https://seungwoo.store'
 // axios 인스턴스 생성
-const springClient = axios.create({
-  baseURL,
+const apiClient = axios.create({
   timeout: 5000, // 요청 타임아웃 설정 (필요에 따라 조정)
 })
 
-springClient.interceptors.request.use((config) => {
+apiClient.interceptors.request.use((config) => {
   if (
     TokenService.getToken() !== undefined &&
     TokenService.getId() !== undefined
@@ -18,4 +16,4 @@ springClient.interceptors.request.use((config) => {
   return config
 })
 
-export default springClient
+export default apiClient
