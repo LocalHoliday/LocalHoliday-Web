@@ -138,6 +138,7 @@ export const TextContainer = styled.div`
   }
 `
 export const Button = styled.div`
+  text-align: center;
   cursor: pointer;
   display: flex;
   flex-direction: column;

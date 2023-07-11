@@ -1,4 +1,4 @@
-import { GetBookListRes } from '@/types/review'
+import { GetBookListRes } from '@/types/bill'
 import BreadCrumb from '../Common/BreadCrumb'
 import Spinner from '../Common/Spinner'
 import LocalHolidayBook from './LocalHolidayBook'
@@ -34,6 +34,7 @@ export default function Recommend() {
           <LocalHolidayBook bookList={bookList as GetBookListRes} />
         </>
       )}
+      <div className="pt-100"></div>
     </>
   )
 }

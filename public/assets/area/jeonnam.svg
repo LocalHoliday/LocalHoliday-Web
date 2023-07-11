@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.7.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 78 78" style="enable-background:new 0 0 78 78;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#00D9BF;}
+	.st1{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st2{fill:none;}
+</style>
+<path class="st0" d="M39,5.9c-12.23,0-22.14,9.91-22.14,22.14c0,12.23,9.91,22.14,22.14,22.14s22.14-9.91,22.14-22.14
+	C61.14,15.81,51.23,5.9,39,5.9z M39,44.4c-9.04,0-16.36-7.33-16.36-16.36S29.96,11.67,39,11.67S55.36,19,55.36,28.03
+	S48.04,44.4,39,44.4z"/>
+<g>
+	<polygon class="st1" points="34.89,68.29 28.2,68.23 24.25,51.23 31.68,53.82 	"/>
+	<polygon class="st1" points="43.11,68.29 49.8,68.23 53.75,51.23 46.32,53.82 	"/>
+</g>
+<rect x="32.44" y="69.87" class="st2" width="0.06" height="2.03"/>
+<path class="st0" d="M18.29,68.85v6.09h41.43v-6.09H18.29z M45.5,72.31h-13V71.9h-0.06v-2.03h0.06h12.24h0.76V72.31z"/>
+<line class="st1" x1="18.29" y1="75.56" x2="59.71" y2="75.56"/>
+<line class="st1" x1="32.3" y1="69.87" x2="32.3" y2="72.31"/>
+<line class="st1" x1="45.7" y1="69.87" x2="45.7" y2="72.31"/>
+<circle class="st1" cx="39" cy="27.83" r="25.39"/>
+<circle class="st1" cx="39" cy="27.83" r="24.17"/>
+<circle class="st1" cx="39" cy="27.83" r="15.23"/>
+<polyline class="st1" points="41.81,4.48 40.46,7.72 39.12,10.96 37.78,7.72 36.44,4.48 "/>
+<polyline class="st1" points="41.81,51.19 40.46,47.94 39.12,44.7 37.78,47.94 36.44,51.19 "/>
+<polyline class="st1" points="62.36,30.56 59.11,29.22 55.87,27.88 59.11,26.54 62.36,25.2 "/>
+<polyline class="st1" points="15.64,30.56 18.89,29.22 22.13,27.88 18.89,26.54 15.64,25.2 "/>
+<polyline class="st1" points="60.44,18.12 56.96,18.58 53.48,19.04 55.62,16.25 57.75,13.47 "/>
+<polyline class="st1" points="19.98,41.47 22.12,38.69 24.26,35.91 20.78,36.37 17.3,36.83 "/>
+<polyline class="st1" points="19.98,14.28 22.12,17.07 24.26,19.85 20.78,19.39 17.3,18.93 "/>
+<polyline class="st1" points="60.44,37.64 56.96,37.18 53.48,36.72 55.62,39.5 57.75,42.29 "/>
+<polyline class="st1" points="52.87,8.99 50.09,11.13 47.3,13.27 47.76,9.79 48.22,6.31 "/>
+<polyline class="st1" points="29.52,49.45 29.98,45.97 30.44,42.49 27.65,44.62 24.87,46.76 "/>
+<polyline class="st1" points="24.87,8.99 27.65,11.13 30.44,13.27 29.98,9.79 29.52,6.31 "/>
+<polyline class="st1" points="48.22,49.45 47.76,45.97 47.3,42.49 50.09,44.62 52.87,46.76 "/>
+</svg>

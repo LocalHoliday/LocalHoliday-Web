@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import RecommendBook from '../Common/RecommendTemplate/Book/RecommendBook'
 import { useGetBookList } from '@/hooks/recommend/useGetBookList'
-import { GetBookListRes } from '@/types/review'
+import { GetBookListRes } from '@/types/bill'
 
 interface LocalHolidayBookProps {
   bookList: GetBookListRes

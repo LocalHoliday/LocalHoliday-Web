@@ -1,5 +1,5 @@
 import { getBookList } from '@/apis/getBookList'
-import { GetBookListRes } from '@/types/review'
+import { GetBookListRes } from '@/types/bill'
 import { useQuery } from '@tanstack/react-query'
 
 export const useGetBookList = () => {

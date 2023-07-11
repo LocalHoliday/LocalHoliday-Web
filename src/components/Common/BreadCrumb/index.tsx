@@ -17,11 +17,11 @@ const backgroundColor: string[] = [
   `linear-gradient(90deg, rgba(217, 255, 255, 0.5) 2.18%, rgba(210, 240, 240, 0.5) 49.39%, rgba(236, 249, 247, 0.5) 96.59%)`,
 ]
 
-const breadImage: string[] = [
-  '../assets/img/recom_bread.svg',
-  '../assets/img/search_bread.svg',
-  '../assets/img/my_bread.svg',
-]
+// const breadImage: string[] = [
+//   '../assets/img/recom_bread.svg',
+//   '../assets/img/search_bread.svg',
+//   '../assets/img/my_bread.svg',
+// ]
 
 interface IBreadCrumbProps {
   colorIdx: number
@@ -45,12 +45,13 @@ export default function BreadCrumb({
     <>
       <Container color={backgroundColor[colorIdx]}>
         <div style={{ display: 'flex' }}>
-          <div className=" ml-50 pt-50">
+          <div className=" ml-50 pt-100">
             <Title>{title}</Title>
 
             <SubTitle>{subTitle}</SubTitle>
           </div>
-          {isArea ? null : (
+
+          {/* {isArea ? null : (
             <div style={{ float: 'right' }}>
               <img
                 src={breadImage[breadImgIdx as number]}
@@ -58,7 +59,7 @@ export default function BreadCrumb({
                 height={300}
               />
             </div>
-          )}
+          )} */}
         </div>
       </Container>
     </>
@@ -67,6 +68,7 @@ export default function BreadCrumb({
 
 const Container = styled.div`
   background: ${(props) => props.color};
+  padding-bottom: 120px;
 `
 
 const Title = styled.div`
