@@ -4,8 +4,6 @@ import { useGetRecommendList } from '@/hooks/recommend/useGetRecommendList'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
-import RecommendTitle from '../Common/RecommendTemplate/Title/RecommendTitle'
-import RecommendDetailTitle from '../Common/RecommendTemplate/Title/RecommendDetailTitle'
 import RecommendBodyDetail from '../Common/RecommendTemplate/Body/RecommendBodyDetail'
 import { IMainRecomData } from '@/types/recommend'
 import { COLORS } from '@/styles/colors'
@@ -23,9 +21,11 @@ export default function LocalHolidayRecommendDetail() {
     recommendList?.result
       .filter((item) => item.uuid === recommendId)
       .map((item) => {
-        item != undefined ? setDetailData(item) : null
+        if (item != undefined) {
+          setDetailData(item)
+        }
       })
-  }, [isLoading])
+  }, [recommendId])
   const jobDate = `${detailData?.jobDTO?.startTime.substring(
     0,
     10,

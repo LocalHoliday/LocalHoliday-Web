@@ -32,7 +32,13 @@ export default function RecommendCourse({
   return (
     <div className="col-lg-4">
       <div style={{ cursor: 'pointer' }} onClick={onClick}>
-        <Image src={img} width={400} height={300} alt="로컬홀리데이 추천" />
+        <Image
+          src={img}
+          width={400}
+          height={300}
+          alt="로컬홀리데이 추천"
+          priority
+        />
         <div className="pt-20" />
         <RecommendTitle title={title} />
         <div className="pt-10" />

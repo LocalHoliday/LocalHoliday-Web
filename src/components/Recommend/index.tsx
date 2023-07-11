@@ -10,6 +10,8 @@ export default function Recommend() {
   const { data: bookList, isLoading: bookLoading } = useGetBookList()
   const { data: recommendList, isLoading: recommendLoading } =
     useGetRecommendList()
+  console.log(recommendList)
+  console.log(bookList)
   return (
     <>
       <BreadCrumb
@@ -28,7 +30,7 @@ export default function Recommend() {
           <LocalHolidayRecommend
             recommendList={recommendList as GetRecommendListRes}
           />
-          <div className="pt-50" />
+          <div className="pt-50"></div>
           <LocalHolidayBook bookList={bookList as GetBookListRes} />
         </>
       )}
