@@ -4,6 +4,7 @@ const nextConfig = {
     domains: [
       'www.agriwork.kr',
       'localholiday.s3.ap-northeast-2.amazonaws.com',
+      'plus.unsplash.com',
     ],
     remotePatterns: [
       {
@@ -17,18 +18,6 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        source: '/api/node/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_KEY_NODE}/:path*`,
-      },
-      {
-        source: '/api/spring/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_KEY_SPRING}/:path*`,
-      },
-    ]
-  },
 }
 
 module.exports = nextConfig

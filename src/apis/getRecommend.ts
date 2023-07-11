@@ -1,9 +1,9 @@
 import { GetRecommendListRes } from '@/types/recommend'
-import apiClient from './client'
+import springClient from './springClient'
 
 export const getRecommendList = async (): Promise<GetRecommendListRes> => {
   try {
-    const res = await apiClient.get('/api/spring/recommend')
+    const res = await springClient.get('/recommend')
     return res.data
   } catch (error) {
     throw error

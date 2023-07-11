@@ -42,15 +42,23 @@ export default function Home3() {
           ) : (
             <div style={{ display: 'flex' }}>
               <TextContainer>
-                <div>
-                  <h1>로컬홀리데이 추천</h1>
-                  <h3>
-                    로컬 홀리데이를 추천받고, 내 로컬 홀리데이도 기록할 수
-                    있으며 다른 사람들의 로컬 홀리데이도 구경해 볼 수 있어요!
-                  </h3>
-                  <div className="pt-30"></div>
-                  <Button onClick={onClick}>자세히보기</Button>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <div>
+                    <h1>로컬홀리데이 추천</h1>
+                    <h3>
+                      로컬 홀리데이를 추천받고, 내 로컬 홀리데이도 기록할 수
+                      있으며 다른 사람들의 로컬 홀리데이도 구경해 볼 수 있어요!
+                    </h3>
+                    <div className="pt-30"></div>
+                  </div>
                 </div>
+                <Button onClick={onClick}>자세히보기</Button>
               </TextContainer>
               <Image
                 src="../assets/img/home3.svg"

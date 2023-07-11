@@ -41,6 +41,7 @@ export default function CourseWorkDetail({
             />
             <RecommendBody label={location} colorType="grayScale" />
           </div>
+          <div className="pt-20"></div>
           <div style={{ display: 'flex' }}>
             <RecommendBody
               label={'작업기간'.concat('\u00A0')}
@@ -48,6 +49,7 @@ export default function CourseWorkDetail({
             />
             <RecommendBody label={date} colorType="grayScale" />
           </div>
+          <div className="pt-20"></div>
           <div style={{ display: 'flex' }}>
             <RecommendBody
               label={'시급'.concat('\u00A0')}
@@ -55,6 +57,7 @@ export default function CourseWorkDetail({
             />
             <RecommendBody label={pay?.toString()} colorType="grayScale" />
           </div>
+          <div className="pt-20"></div>
         </div>
       </div>
     </>

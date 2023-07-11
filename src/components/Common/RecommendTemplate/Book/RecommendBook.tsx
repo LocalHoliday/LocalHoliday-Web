@@ -30,9 +30,7 @@ export default function RecommendBook({
       {
         pathname: `/recommend/book/${title}`,
         query: {
-          id: id,
           billId: billId,
-          userId: userId,
         },
       },
       `/recommend/book/${title}`,

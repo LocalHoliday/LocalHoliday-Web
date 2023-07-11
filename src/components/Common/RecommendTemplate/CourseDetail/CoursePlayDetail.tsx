@@ -16,40 +16,38 @@ export default function CoursePlayDetail({
 }: CoursePlayDetailProps) {
   return (
     <>
-      <div className="col-lg-6">
-        <div style={{ display: 'flex' }}>
-          <Image
-            src={img as string}
-            width={300}
-            height={300}
-            alt="detail"
-            priority
-          />
-          <div className="pr-20" />
+      <div style={{ display: 'flex' }}>
+        <Image
+          src={img as string}
+          width={300}
+          height={300}
+          alt="detail"
+          priority
+        />
+        <div className="pr-20" />
+        <div>
+          <RecommendTitle title={title} />
+          <div className="pt-20" />
           <div>
-            <RecommendTitle title={title} />
+            <div style={{ display: 'flex' }}>
+              <RecommendBody
+                label={'장소'.concat('\u00A0')}
+                colorType="mainColor"
+              />
+              <RecommendBody label={location} colorType="grayScale" />
+            </div>
             <div className="pt-20" />
-            <div>
-              <div style={{ display: 'flex' }}>
-                <RecommendBody
-                  label={'장소'.concat('\u00A0')}
-                  colorType="mainColor"
-                />
-
-                <RecommendBody label={location} colorType="grayScale" />
-              </div>
-              <div style={{ display: 'flex' }}>
-                <RecommendBody
-                  label={'전화번호 '.concat('\u00A0')}
-                  colorType="mainColor"
-                />
-                <RecommendBody label={phone} colorType="grayScale" />
-              </div>
+            <div style={{ display: 'flex' }}>
+              <RecommendBody
+                label={'전화번호 '.concat('\u00A0')}
+                colorType="mainColor"
+              />
+              <RecommendBody label={phone} colorType="grayScale" />
             </div>
           </div>
         </div>
-        <div className="pb-100" />
       </div>
+      <div className="pb-100" />
     </>
   )
 }
