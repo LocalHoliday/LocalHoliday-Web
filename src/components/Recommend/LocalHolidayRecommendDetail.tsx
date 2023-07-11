@@ -14,18 +14,16 @@ import CoursePlayDetail from '../Common/RecommendTemplate/CourseDetail/CoursePla
 export default function LocalHolidayRecommendDetail() {
   const { query } = useRouter()
   const recommendId = query.courseId
-  const [detailData, setDetailData] = useState<IMainRecomData>()
 
   const { data: recommendList, isLoading } = useGetRecommendList()
+  const [detailData, setDetailData] = useState<IMainRecomData>()
   useEffect(() => {
-    recommendList?.result
-      .filter((item) => item.uuid === recommendId)
-      .map((item) => {
-        if (item != undefined) {
-          setDetailData(item)
-        }
-      })
-  }, [recommendId])
+    recommendList?.result.filter((item) => {
+      if (item.uuid === recommendId) {
+        setDetailData(item)
+      }
+    })
+  }, [isLoading])
   const jobDate = `${detailData?.jobDTO?.startTime.substring(
     0,
     10,
