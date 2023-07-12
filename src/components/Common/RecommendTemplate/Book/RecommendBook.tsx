@@ -28,12 +28,12 @@ export default function RecommendBook({
   const onClick = () => {
     router.push(
       {
-        pathname: `/recommend/book/${title}`,
+        pathname: `/recommend/book/${billId}`,
         query: {
           billId: billId,
         },
       },
-      `/recommend/book/${title}`,
+      `/recommend/book/${billId}`,
     )
   }
 

@@ -1,5 +1,8 @@
-export type BillDto<T> = {
+export type BillSDto<T> = {
   reviews: T
+}
+export type BillDto<T> = {
+  review: T
 }
 
 export interface IBillData {
@@ -24,24 +27,9 @@ export interface IBillDetailData {
   user_id: string
   photo: string
   nickname: string
-  houses: IBillItemDetailData[]
-  foods: IBillItemDetailData[]
-  tourSpots: IBillItemDetailData[]
-  jobs: IBillItemDetailData[]
+  playIds: string[]
+  jobIds: string[]
 }
 
-export interface IBillItemDetailData {
-  id: string
-  bill_id: string
-  content: string
-  created: string
-  end_date: string
-  house_id: string
-  photo: string
-  start_date: string
-  title: string
-  user_id: string
-}
-
-export type GetBookListRes = BillDto<IBillData[]>
+export type GetBookListRes = BillSDto<IBillData[]>
 export type GetBookDetailRes = BillDto<IBillDetailData>

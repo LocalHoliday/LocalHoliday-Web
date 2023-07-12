@@ -1,6 +1,6 @@
 import { ResponseDto } from './common'
 
-interface IPlayItem {
+export interface IPlayItem {
   uuid: string
   name: string
   addr: string

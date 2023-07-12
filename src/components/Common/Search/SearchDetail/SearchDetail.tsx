@@ -25,28 +25,31 @@ export default function SearchDetail({
             <div>
               <Image src={photo} width={550} height={550} alt="상세이미지" />
             </div>
-            <div>
+            <div style={{ padding: '50px' }}>
               <div className="pt-30"></div>
               <styles.Title>{name}</styles.Title>
               <div className="pt-50"></div>
               <div style={{ display: 'flex' }}>
                 <styles.CategoryTitle>위치</styles.CategoryTitle>
-                <div className="pt-30"></div>
+                <div className="pl-30"></div>
                 <styles.Body>{location}</styles.Body>
               </div>
+              <div className="pt-20"></div>
               <div style={{ display: 'flex' }}>
                 <styles.CategoryTitle>작업기간</styles.CategoryTitle>
-                <div className="pt-30"></div>
+                <div className="pl-30"></div>
                 <styles.Body>{workDate}</styles.Body>
               </div>
+              <div className="pt-20"></div>
               <div style={{ display: 'flex' }}>
                 <styles.CategoryTitle>급여</styles.CategoryTitle>
-                <div className="pt-30"></div>
+                <div className="pl-30"></div>
                 <styles.Body>{workPay}</styles.Body>
               </div>
+              <div className="pt-20"></div>
               <div style={{ display: 'flex' }}>
                 <styles.CategoryTitle>전화번호</styles.CategoryTitle>
-                <div className="pt-30"></div>
+                <div className="pl-30"></div>
                 <styles.Body>{hostPhone}</styles.Body>
               </div>
               <div className="pt-60"></div>

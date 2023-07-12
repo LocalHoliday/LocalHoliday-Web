@@ -2,10 +2,10 @@ import { getJobDetail } from '@/apis/getJobDetail'
 import { GetJobDetailRes } from '@/types/job'
 import { useQuery } from 'react-query'
 
-export default function useGetJobDetail(id: string, place: string) {
+export default function useGetJobDetail(id: string) {
   return useQuery<GetJobDetailRes>(
     ['getJobDetail', id],
-    () => getJobDetail(id, place),
+    () => getJobDetail(id),
     {
       staleTime: 3000,
     },

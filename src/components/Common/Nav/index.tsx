@@ -32,20 +32,26 @@ export default function Nav() {
                     <List>
                       <Link href="/search">로컬홀리데이 찾기</Link>
                     </List>
-
                     <List>
+                      <Link href="/search">서비스 소개</Link>
+                    </List>
+
+                    {/* <List>
                       <Link href="/my">나의 로컬홀리데이</Link>
                     </List>
                     <List>
                       <Link href="/login">로그인</Link>
-                    </List>
+                    </List> */}
                   </>
                 ) : (
                   <>
                     <Link href="/recommend">추천</Link>
                     <Link href="/search">로컬홀리데이 찾기</Link>
-                    <Link href="/my">나의 로컬홀리데이</Link>
-                    <Link href="/login">로그인</Link>
+
+                    <Link href="/search">서비스 소개</Link>
+
+                    {/* <Link href="/my">나의 로컬홀리데이</Link>
+                    <Link href="/login">로그인</Link> */}
                   </>
                 )}
               </NavbarLinks>
@@ -63,6 +69,7 @@ const NavContainer = styled.nav`
   margin-right: var(--spacing-nav);
   font-size: var(--font-H3);
   text-align: center;
+  justify-content: space-between;
   ${media.large} {
     margin-left: var(--spacing-navL);
     margin-right: var(--spacing-navL);
@@ -109,7 +116,7 @@ const Logo = styled.div`
 
 const NavbarLinks = styled.div`
   a {
-    margin-left: 3rem;
+    margin-left: 5rem;
     color: var(--color-black);
     text-decoration: none;
     font-size: var(--font-H4);

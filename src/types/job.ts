@@ -2,7 +2,7 @@ interface JobDetail {
   job: IJobDetail
 }
 
-interface IJobDetail {
+export interface IJobDetail {
   name: string
   photo: string
   host_phone: string

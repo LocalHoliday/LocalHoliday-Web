@@ -4,7 +4,6 @@ import SearchPlayDetail from './SearchPlayDetail'
 
 export interface JobDetailProps {
   id: string
-  area: string
 }
 
 export interface PlayDetailProps {
@@ -22,7 +21,7 @@ export default function SearchDetail() {
   return (
     <>
       {isJob === 'true' ? (
-        <SearchJobDetail id={id as string} area={area as string} />
+        <SearchJobDetail id={id as string} />
       ) : (
         <SearchPlayDetail id={id as string} />
       )}

@@ -50,7 +50,7 @@ export default function SearchPlayMap({ lat, lng }: SearchPlayMapProps) {
     mapScript.addEventListener('load', onLoadKakaoMap)
   }, [])
   return (
-    <div style={{ height: '100%' }}>
+    <div style={{ height: '100%', width: '100%' }}>
       <div style={{ display: 'flex' }}>
         <styles.AccentTitle>위치</styles.AccentTitle>
         <styles.Title>를 확인해보세요!</styles.Title>
@@ -58,7 +58,11 @@ export default function SearchPlayMap({ lat, lng }: SearchPlayMapProps) {
       <div className="pt-60"></div>
       <div
         id="map"
-        style={{ height: '100%', width: '100%', minHeight: '600px' }}
+        style={{
+          height: '100%',
+          width: '100%',
+          minHeight: '600px',
+        }}
       ></div>
     </div>
   )

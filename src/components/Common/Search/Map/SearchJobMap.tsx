@@ -31,31 +31,28 @@ export default function SearchJobMap({ addr }: SearchJobMapProps) {
         const mapContainer = document.getElementById('map')
         const geocoder = new window.kakao.maps.services.Geocoder()
 
-        geocoder.addressSearch(
-          '제주특별자치도 제주시 첨단로 242',
-          function (result: any, status: any) {
-            // 정상적으로 검색이 완료됐으면
-            if (status === window.kakao.maps.services.Status.OK) {
-              const coords = new window.kakao.maps.LatLng(
-                result[0].y,
-                result[0].x,
-              )
-              lat = coords.Ma
-              lng = coords.La
+        geocoder.addressSearch(addr, function (result: any, status: any) {
+          // 정상적으로 검색이 완료됐으면
+          if (status === window.kakao.maps.services.Status.OK) {
+            const coords = new window.kakao.maps.LatLng(
+              result[0].y,
+              result[0].x,
+            )
+            lat = coords.Ma
+            lng = coords.La
 
-              const mapOption = {
-                center: new window.kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
-                level: 3, // 지도의 확대 레벨
-              }
-              const map = new window.kakao.maps.Map(mapContainer, mapOption)
-              const marker = new window.kakao.maps.Marker({
-                map: map,
-                position: coords,
-              })
-              marker.setMap(map)
+            const mapOption = {
+              center: new window.kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
+              level: 3, // 지도의 확대 레벨
             }
-          },
-        )
+            const map = new window.kakao.maps.Map(mapContainer, mapOption)
+            const marker = new window.kakao.maps.Marker({
+              map: map,
+              position: coords,
+            })
+            marker.setMap(map)
+          }
+        })
       })
     }
 
@@ -71,7 +68,7 @@ export default function SearchJobMap({ addr }: SearchJobMapProps) {
       <div className="pt-60"></div>
       <div
         id="map"
-        style={{ height: '100%', width: '100%', minHeight: '300px' }}
+        style={{ height: '100%', width: '100%', minHeight: '500px' }}
       ></div>
     </div>
   )
