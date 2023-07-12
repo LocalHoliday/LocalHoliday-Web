@@ -1,5 +1,7 @@
 # 🏖 Local Holiday Web
 
+![image](https://github.com/LocalHoliday/LocalHoliday-Web/assets/85864699/c822cd8c-1c59-4d09-b2a9-4e78b2a17e4b)
+
 ## Commit Convention
 
 - **커밋 메시지 규칙**
