@@ -3,16 +3,21 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import CoursePlayDetail from '../CourseDetail/CoursePlayDetail'
 import { useState } from 'react'
+import useGetPlayDetail from '@/hooks/search/useGetPlayDetail'
+import { useEffect } from 'react'
+import { GetPlayDetailRes, IPlayItem } from '@/types/play'
+import { getPlayDetail } from '@/apis/getPlayDetail'
+import { IJobDetail } from '@/types/job'
+import { getJobDetail } from '@/apis/getJobDetail'
+import CourseWorkDetail from '../CourseDetail/CourseWorkDetail'
 
 interface RecommendBookDetailProps {
   title: string
   author: string
   img: string
   content: string
-  houseId: string
-  foodId: string
-  tourId: string
-  jobId: string
+  playIds: string[]
+  jobIds: string[]
 }
 
 interface ColorProps {
@@ -24,12 +29,24 @@ export default function RecommendBookDetail({
   author,
   img,
   content,
-  houseId,
-  tourId,
-  jobId,
+  playIds,
+  jobIds,
 }: RecommendBookDetailProps) {
-  const [playData, setPlayData] = useState('')
-  const [jodData, setJobData] = useState('')
+  const playData: IPlayItem[] = []
+  const jobData: IJobDetail[] = []
+  useEffect(() => {
+    playIds.map((item) => {
+      const data = getPlayDetail(item)
+      data.then((item) => playData.push(item.result))
+    })
+  }, [])
+
+  useEffect(() => {
+    jobIds.map((item) => {
+      const data = getJobDetail(item)
+      data.then((item) => jobData.push(item.job))
+    })
+  }, [])
   return (
     <>
       <Container>
@@ -48,7 +65,19 @@ export default function RecommendBookDetail({
             <Body color="gray"> 님의 로컬일자리</Body>
           </div>
           <div className="pt-50"></div>
-          {}
+          {jobData?.map((item) => (
+            <CourseWorkDetail
+              key={item.uuid}
+              img={item.photo}
+              title={item.name}
+              location={item.addr}
+              date={`${item.startTime.substring(
+                0,
+                10,
+              )} ~ ${item.endTime.substring(0, 10)}`}
+              pay={item.pay}
+            />
+          ))}
           <div className="pt-60"></div>
           <div style={{ display: 'flex' }}>
             <Body color="main">{author}</Body>
@@ -57,18 +86,15 @@ export default function RecommendBookDetail({
           <div className="pt-50"></div>
           <div className="row col-lg-12">
             <div className="col-lg-12">
-              <CoursePlayDetail
-                img=""
-                title="죵나 힘들다"
-                location="서울시"
-                phone="010-1234-1234"
-              />
-              <CoursePlayDetail
-                img=""
-                title="죵나 힘들다"
-                location="서울시"
-                phone="010-1234-1234"
-              />
+              {playData.map((item) => (
+                <CoursePlayDetail
+                  key={item.uuid}
+                  title={item.name}
+                  location={item.addr}
+                  img={item.photo}
+                  phone={'010-1234-1234'}
+                />
+              ))}
             </div>
           </div>
         </SubContainer>

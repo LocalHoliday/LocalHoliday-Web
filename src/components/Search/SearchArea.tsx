@@ -16,6 +16,7 @@ interface TabBarProps {
 
 export default function SearchArea() {
   const { query } = useRouter()
+  console.log(query)
   const area = query.id
   const areaId = query.areaId
   const [areaName, setAreaName] = useState<string>('')
@@ -29,7 +30,7 @@ export default function SearchArea() {
     } else {
       setAreaName(area as string)
     }
-  }, [])
+  }, [query])
   const [playClick, setPlayClick] = useState<boolean>(false)
   const [workClick, setWorkClick] = useState<boolean>(true)
   const { data: playData, isLoading: isPlayLoading } = useGetAreaPlayList(
@@ -87,7 +88,9 @@ export default function SearchArea() {
                     {jobData?.jobs.map((item) => (
                       <SearchItem
                         key={item.uuid}
+                        id={item.uuid}
                         isWork={true}
+                        area={area as string}
                         name={item.name}
                         location={item.addr}
                         workPay={item.pay}
@@ -111,7 +114,9 @@ export default function SearchArea() {
                     {playList?.map((item) => (
                       <SearchItem
                         key={item.uuid}
+                        id={item.uuid}
                         isWork={false}
+                        area={area as string}
                         name={item.name}
                         location={item.addr}
                         photo={item.photo}

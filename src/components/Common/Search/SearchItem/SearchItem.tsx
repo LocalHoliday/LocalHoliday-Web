@@ -1,26 +1,69 @@
 import Image from 'next/image'
 import * as styles from './SearchItem.style'
+import { useRouter } from 'next/router'
 
-interface SearchItemProps {
+export interface SearchItemProps {
+  id: string
   isWork: boolean
   name: string
   location: string
   photo: string
   workDate?: string
   workPay?: number
+  area?: string
+  lon?: string
+  lat?: string
+  info?: string
+  hostPhone?: string
 }
 export default function SearchItem({
+  id,
   isWork,
   name,
   location,
   photo,
   workDate,
   workPay,
+  area,
 }: SearchItemProps) {
+  const router = useRouter()
+  const onJobClick = () => {
+    console.log(id)
+    console.log(name)
+    router.push(
+      {
+        pathname: `/search/detail/${id}`,
+        query: {
+          uuid: id,
+          isJob: true,
+          area: area,
+        },
+      },
+      `/search/detail/${id}`,
+    )
+  }
+  const onPlayClick = () => {
+    console.log('놀거리')
+    router.push(
+      {
+        pathname: `/search/detail/${id}`,
+        query: {
+          name: name,
+          uuid: id,
+          isJob: false,
+        },
+      },
+      `/search/detail/${id}`,
+    )
+  }
   return (
     <>
       {isWork ? (
-        <div className="col-lg-4" style={{ padding: '30px' }}>
+        <div
+          className="col-lg-4"
+          style={{ padding: '30px' }}
+          onClick={onJobClick}
+        >
           <Image src={photo} width={350} height={350} alt="지역별" />
           <div className="pt-30"></div>
           <styles.Title>{name}</styles.Title>
@@ -45,7 +88,11 @@ export default function SearchItem({
         </div>
       ) : (
         <>
-          <div className="col-lg-4" style={{ padding: '30px' }}>
+          <div
+            className="col-lg-4"
+            style={{ padding: '30px' }}
+            onClick={onPlayClick}
+          >
             <Image src={photo} width={350} height={350} alt="지역별" />
             <div className="pt-30"></div>
             <styles.Title>{name}</styles.Title>
