@@ -87,7 +87,9 @@ export default function SearchArea() {
                     {jobData?.jobs.map((item) => (
                       <SearchItem
                         key={item.uuid}
+                        id={item.uuid}
                         isWork={true}
+                        area={area as string}
                         name={item.name}
                         location={item.addr}
                         workPay={item.pay}
@@ -111,7 +113,9 @@ export default function SearchArea() {
                     {playList?.map((item) => (
                       <SearchItem
                         key={item.uuid}
+                        id={item.uuid}
                         isWork={false}
+                        area={area as string}
                         name={item.name}
                         location={item.addr}
                         photo={item.photo}

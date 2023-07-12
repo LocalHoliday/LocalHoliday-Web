@@ -1,12 +1,12 @@
 import Footer from '@/components/Common/Footer'
 import Nav from '@/components/Common/Nav'
-import SearchArea from '@/components/Search/SearchArea'
+import SearchDetail from '@/components/Search/SearchDetail'
 
 export default function index() {
   return (
     <>
       <Nav />
-      <SearchArea />
+      <SearchDetail />
 
       <Footer />
     </>
