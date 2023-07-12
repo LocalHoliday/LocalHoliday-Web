@@ -64,7 +64,7 @@ export default function SearchItem({
           style={{ padding: '30px' }}
           onClick={onJobClick}
         >
-          <Image src={photo} width={350} height={350} alt="지역별" />
+          <Image src={photo} width={350} height={350} alt="지역별" priority />
           <div className="pt-30"></div>
           <styles.Title>{name}</styles.Title>
           <div className="pt-30"></div>

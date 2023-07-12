@@ -40,64 +40,54 @@ export default function LocalHolidayRecommendDetail() {
       ) : (
         <Container>
           <div className="pt-50"></div>
-          <SubContainer>
-            <Image
-              src={detailData?.photo as string}
-              width={900}
-              height={600}
-              alt="로컬홀리데이 추천 상세"
-              className="center-image"
-            />
-            <div className="pt-50"></div>
-            <div
-              style={{
-                marginRight: 'auto',
-              }}
-            >
-              <TitleText>{detailData?.title as string}</TitleText>
-            </div>
-            <div className="pt-20"></div>
 
-            <RecommendBody label={detailData?.location} colorType="grayScale" />
-            <RecommendBodyDetail label="4박5일" colorType="mainColor" />
-            <div className="pt-60"></div>
-            <div style={{ display: 'flex' }}>
-              <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
-              <RecomText>에 딱맞는 로컬 일거리를 추천드려요!</RecomText>
-            </div>
-            <div className="pt-50"></div>
-            <CourseWorkDetail
-              img={detailData?.jobDTO.photo as string}
-              title={detailData?.jobDTO?.name as string}
-              location={detailData?.jobDTO?.addr as string}
-              date={jobDate}
-              pay={detailData?.jobDTO?.pay as number}
-            />
+          <Image
+            src={detailData?.photo as string}
+            width={800}
+            height={500}
+            alt="로컬홀리데이 추천 상세"
+            className="center-image"
+          />
+          <div className="pt-50"></div>
+          <TitleText>{detailData?.title as string}</TitleText>
+          <div className="pt-20"></div>
 
-            <div className="pt-100"></div>
-            <div style={{ display: 'flex' }}>
-              <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
-              <RecomText>에 딱맞는 로컬 놀거리를 추천드려요!</RecomText>
+          <RecommendBody label={detailData?.location} colorType="grayScale" />
+          <RecommendBodyDetail label="4박5일" colorType="mainColor" />
+          <div className="pt-60"></div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
+            <RecomText>에 딱맞는 로컬 일거리를 추천드려요!</RecomText>
+          </div>
+          <div className="pt-50"></div>
+          <CourseWorkDetail
+            img={detailData?.jobDTO.photo as string}
+            title={detailData?.jobDTO?.name as string}
+            location={detailData?.jobDTO?.addr as string}
+            date={jobDate}
+            pay={detailData?.jobDTO?.pay as number}
+          />
+
+          <div className="pt-100"></div>
+          <div style={{ display: 'flex' }}>
+            <AccentText>{detailData?.location.substring(0, 3)}</AccentText>
+            <RecomText>에 딱맞는 로컬 놀거리를 추천드려요!</RecomText>
+          </div>
+          <div className="pt-50"></div>
+          <div className="row col-lg-12">
+            <div className="col" style={{ display: 'flex', flexWrap: 'wrap' }}>
+              {detailData?.tourList.map((item) => (
+                <div className="col-lg-6" key={item.uuid}>
+                  <CoursePlayDetail
+                    img={item.photo}
+                    title={item.name}
+                    location={item.addr}
+                    phone="010-1234-1234"
+                  />
+                </div>
+              ))}
             </div>
-            <div className="pt-50"></div>
-            <div className="row col-lg-12">
-              <div
-                className="col"
-                style={{ display: 'flex', flexWrap: 'wrap' }}
-              >
-                {detailData?.tourList.map((item) => (
-                  <div className="col-lg-6" key={item.uuid}>
-                    <CoursePlayDetail
-                      img={item.photo}
-                      title={item.name}
-                      location={item.addr}
-                      phone="010-1234-1234"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </SubContainer>
+          </div>
         </Container>
       )}
     </>
@@ -106,16 +96,12 @@ export default function LocalHolidayRecommendDetail() {
 
 const Container = styled.div`
   display: flex;
-
+  justify-content: center;
+  align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-`
-
-const SubContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-direction: column;
+  text-align: center;
 `
 
 const RecomText = styled.div`

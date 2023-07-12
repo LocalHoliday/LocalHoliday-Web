@@ -23,7 +23,13 @@ export default function SearchDetail({
         <>
           <div style={{ display: 'flex' }}>
             <div>
-              <Image src={photo} width={550} height={550} alt="상세이미지" />
+              <Image
+                src={photo}
+                width={550}
+                height={550}
+                alt="상세이미지"
+                priority
+              />
             </div>
             <div style={{ padding: '50px' }}>
               <div className="pt-30"></div>
