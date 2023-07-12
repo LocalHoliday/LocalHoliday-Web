@@ -16,6 +16,7 @@ interface TabBarProps {
 
 export default function SearchArea() {
   const { query } = useRouter()
+  console.log(query)
   const area = query.id
   const areaId = query.areaId
   const [areaName, setAreaName] = useState<string>('')
@@ -29,7 +30,7 @@ export default function SearchArea() {
     } else {
       setAreaName(area as string)
     }
-  }, [])
+  }, [query])
   const [playClick, setPlayClick] = useState<boolean>(false)
   const [workClick, setWorkClick] = useState<boolean>(true)
   const { data: playData, isLoading: isPlayLoading } = useGetAreaPlayList(

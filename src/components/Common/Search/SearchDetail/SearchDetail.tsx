@@ -13,6 +13,7 @@ export default function SearchDetail({
   lon,
   lat,
   info,
+  hostPhone,
 }: SearchItemProps) {
   console.log(name)
   console.log(isWork)
@@ -34,11 +35,6 @@ export default function SearchDetail({
                 <styles.Body>{location}</styles.Body>
               </div>
               <div style={{ display: 'flex' }}>
-                <styles.CategoryTitle>위치</styles.CategoryTitle>
-                <div className="pt-30"></div>
-                <styles.Body>{location}</styles.Body>
-              </div>
-              <div style={{ display: 'flex' }}>
                 <styles.CategoryTitle>작업기간</styles.CategoryTitle>
                 <div className="pt-30"></div>
                 <styles.Body>{workDate}</styles.Body>
@@ -48,6 +44,12 @@ export default function SearchDetail({
                 <div className="pt-30"></div>
                 <styles.Body>{workPay}</styles.Body>
               </div>
+              <div style={{ display: 'flex' }}>
+                <styles.CategoryTitle>전화번호</styles.CategoryTitle>
+                <div className="pt-30"></div>
+                <styles.Body>{hostPhone}</styles.Body>
+              </div>
+              <div className="pt-60"></div>
               <ScheduleButton />
             </div>
           </div>
@@ -73,7 +75,7 @@ export default function SearchDetail({
                 <div className="pl-30"></div>
                 <styles.Body>{info}</styles.Body>
               </div>
-              <div className="pt-20"></div>
+              <div className="pt-60"></div>
               <ScheduleButton />
             </div>
           </div>

@@ -3,7 +3,11 @@ import { GetAreaJobRes } from '@/types/area'
 import { useQuery } from 'react-query'
 
 export default function useGetAreaJobList(loc: string) {
-  return useQuery<GetAreaJobRes>(['getAreaJob'], () => getAreayJobList(loc), {
-    staleTime: 3000,
-  })
+  return useQuery<GetAreaJobRes>(
+    ['getAreaJob', loc],
+    () => getAreayJobList(loc),
+    {
+      staleTime: 3000,
+    },
+  )
 }

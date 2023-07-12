@@ -105,8 +105,10 @@ export default function LocalHolidayRecommendDetail() {
 }
 
 const Container = styled.div`
-  padding-left: 40px;
-  padding-right: 40px;
+  display: flex;
+
+  padding-left: 20px;
+  padding-right: 20px;
 `
 
 const SubContainer = styled.div`

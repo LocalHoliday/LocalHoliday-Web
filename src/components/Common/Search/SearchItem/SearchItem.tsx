@@ -14,6 +14,7 @@ export interface SearchItemProps {
   lon?: string
   lat?: string
   info?: string
+  hostPhone?: string
 }
 export default function SearchItem({
   id,
@@ -31,28 +32,28 @@ export default function SearchItem({
     console.log(name)
     router.push(
       {
-        pathname: `/search/detail/${name}`,
+        pathname: `/search/detail/${id}`,
         query: {
           uuid: id,
           isJob: true,
           area: area,
         },
       },
-      `/search/detail/${name}`,
+      `/search/detail/${id}`,
     )
   }
   const onPlayClick = () => {
     console.log('놀거리')
     router.push(
       {
-        pathname: `/search/detail/${name}`,
+        pathname: `/search/detail/${id}`,
         query: {
           name: name,
           uuid: id,
           isJob: false,
         },
       },
-      `/search/detail/${name}`,
+      `/search/detail/${id}`,
     )
   }
   return (

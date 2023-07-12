@@ -13,6 +13,7 @@ export interface PlayDetailProps {
 
 export default function SearchDetail() {
   const { query } = useRouter()
+  const id = query.id
   const uuid = query.uuid as string
   const isJob = query.isJob as string
   const area = query.area
@@ -21,9 +22,9 @@ export default function SearchDetail() {
   return (
     <>
       {isJob === 'true' ? (
-        <SearchJobDetail id={uuid as string} area={area as string} />
+        <SearchJobDetail id={id as string} area={area as string} />
       ) : (
-        <SearchPlayDetail id={uuid} />
+        <SearchPlayDetail id={id as string} />
       )}
     </>
   )

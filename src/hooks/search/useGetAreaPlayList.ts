@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 
 export default function useGetAreaPlayList(loc: string) {
   return useQuery<GetAreaPlayRes>(
-    ['getAreaPlay'],
+    ['getAreaPlay', loc],
     () => getAreayPlayList(loc),
     {
       staleTime: 3000,
