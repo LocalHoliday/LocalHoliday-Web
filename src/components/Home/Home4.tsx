@@ -57,7 +57,6 @@ export default function Home4() {
                   </div>
                 </div>
               </TextContainer>
-
               <div>
                 <Image
                   src="../assets/img/home4.svg"
