@@ -3,9 +3,16 @@ import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 import { media } from '@/styles/media'
+import { useRouter } from 'next/router'
 
 export default function Home4() {
+  const router = useRouter()
   const isMobile = useResponsiveMobile()
+  const onClick = () => {
+    router.push(
+      'https://apps.apple.com/kr/app/%EB%A1%9C%EC%BB%AC-%ED%99%80%EB%A6%AC%EB%8D%B0%EC%9D%B4/id6450975088',
+    )
+  }
   return (
     <>
       <Container>
@@ -39,23 +46,27 @@ export default function Home4() {
                   <h1>지금 바로 로컬 홀리데이를 즐겨보세요!</h1>
                   <h3>모바일 환경에서도 로컬홀리데이를 즐겨보세요.</h3>
 
-                  <Image
-                    src="../assets/img/home4_2.svg"
-                    alt="home1"
-                    width={150}
-                    height={150}
-                    priority
-                  ></Image>
+                  <div onClick={onClick}>
+                    <Image
+                      src="../assets/img/home4_2.svg"
+                      alt="home1"
+                      width={150}
+                      height={150}
+                      priority
+                    ></Image>
+                  </div>
                 </div>
               </TextContainer>
 
-              <Image
-                src="../assets/img/home4.svg"
-                alt="home1"
-                width={600}
-                height={500}
-                priority
-              ></Image>
+              <div>
+                <Image
+                  src="../assets/img/home4.svg"
+                  alt="home1"
+                  width={600}
+                  height={500}
+                  priority
+                ></Image>
+              </div>
             </div>
           )}
         </SubContainer>
