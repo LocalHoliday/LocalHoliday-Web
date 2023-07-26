@@ -3,13 +3,16 @@ import { SubContainer, TextContainer } from './HomeStyle'
 import styled from '@emotion/styled'
 import { media } from '@/styles/media'
 import Image from 'next/image'
-
+import { useRef } from 'react'
+import useIntersectionObsever from '@/hooks/useIntersectionObserver'
 export default function Home1() {
   const isMobile = useResponsiveMobile()
+  const ref = useRef<HTMLDivElement>(null)
+  const isInViewport = useIntersectionObsever(ref)
 
   return (
     <>
-      <Container>
+      <Container ref={ref} className={isInViewport ? 'animation' : ''}>
         <SubContainer>
           {isMobile ? (
             <div>
@@ -59,8 +62,10 @@ export default function Home1() {
 export const Container = styled.div`
   height: auto;
   overflow: hidden;
-  opacity: 1;
-  transform: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   position: relative;
   background-image: linear-gradient(
@@ -69,9 +74,30 @@ export const Container = styled.div`
     #ccfff9 97.79%,
     #ccfff9 97.79%
   );
-  min-height: 35rem;
+  min-height: 60rem;
 
   ${media.mobile} {
     min-height: 20rem;
+  }
+  &.animation {
+    animation-name: opacity;
+    animation-duration: 2s;
+
+    @keyframes opacity {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes opacity {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 `

@@ -1,19 +1,21 @@
 import { SubContainer, TextContainer, Button } from './HomeStyle'
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+
 import styled from '@emotion/styled'
 import { media } from '@/styles/media'
-export default function Home3() {
-  const router = useRouter()
-  const isMobile = useResponsiveMobile()
 
-  const onClick = () => {
-    router.push('/recommend')
-  }
+import { useRef } from 'react'
+import useIntersectionObsever from '@/hooks/useIntersectionObserver'
+
+export default function Home3() {
+  const isMobile = useResponsiveMobile()
+  const ref = useRef<HTMLDivElement>(null)
+  const isInViewport = useIntersectionObsever(ref)
+
   return (
     <>
-      <Container>
+      <Container ref={ref} className={isInViewport ? 'animation' : ''}>
         <SubContainer>
           {isMobile ? (
             <div>
@@ -28,7 +30,6 @@ export default function Home3() {
                     <div className="pt-20"></div>
                   </div>
                   <div className="pt-10"></div>
-                  <Button onClick={onClick}>자세히보기</Button>
                 </div>
               </TextContainer>
               <Image
@@ -58,8 +59,8 @@ export default function Home3() {
                     <div className="pt-30"></div>
                   </div>
                 </div>
-                <Button onClick={onClick}>자세히보기</Button>
               </TextContainer>
+
               <Image
                 src="../assets/img/home3.svg"
                 alt="home1"
@@ -76,8 +77,10 @@ export default function Home3() {
 }
 export const Container = styled.div`
   height: auto;
-  opacity: 1;
-  transform: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   position: relative;
   background-image: linear-gradient(
@@ -86,9 +89,30 @@ export const Container = styled.div`
     #d8effc 49.34%,
     #ebfaff 94.82%
   );
-  min-height: 35rem;
+  min-height: 60rem;
 
   ${media.mobile} {
     min-height: 20rem;
+  }
+  &.animation {
+    animation-name: opacity;
+    animation-duration: 2s;
+
+    @keyframes opacity {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes opacity {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 `

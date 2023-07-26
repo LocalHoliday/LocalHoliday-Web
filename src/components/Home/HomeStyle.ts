@@ -2,11 +2,10 @@ import styled from '@emotion/styled'
 import { media } from '@/styles/media'
 
 export const SubContainer = styled.div`
-  display: flex;
-  padding-top: 2rem;
   align-items: center;
   gap: 160px;
   position: absolute;
+  justify-content: center;
 
   ${media.large} {
     flex-direction: row;

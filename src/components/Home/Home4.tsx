@@ -4,10 +4,14 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 import { media } from '@/styles/media'
 import { useRouter } from 'next/router'
+import { useRef } from 'react'
+import useIntersectionObsever from '@/hooks/useIntersectionObserver'
 
 export default function Home4() {
   const router = useRouter()
   const isMobile = useResponsiveMobile()
+  const ref = useRef<HTMLDivElement>(null)
+  const isInViewport = useIntersectionObsever(ref)
   const onClick = () => {
     router.push(
       'https://apps.apple.com/kr/app/%EB%A1%9C%EC%BB%AC-%ED%99%80%EB%A6%AC%EB%8D%B0%EC%9D%B4/id6450975088',
@@ -15,7 +19,7 @@ export default function Home4() {
   }
   return (
     <>
-      <Container>
+      <Container ref={ref} className={isInViewport ? 'animation' : ''}>
         <SubContainer>
           {isMobile ? (
             <div>
@@ -76,8 +80,10 @@ export default function Home4() {
 
 export const Container = styled.div`
   height: auto;
-  opacity: 1;
-  transform: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   position: relative;
   background-image: radial-gradient(
@@ -88,9 +94,30 @@ export const Container = styled.div`
     #eff5ff 78.65%,
     #e1ecff 100%
   );
-  min-height: 35rem;
+  min-height: 60rem;
 
   ${media.mobile} {
     min-height: 20rem;
+  }
+  &.animation {
+    animation-name: opacity;
+    animation-duration: 2s;
+
+    @keyframes opacity {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes opacity {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 `
