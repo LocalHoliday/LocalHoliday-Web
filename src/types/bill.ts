@@ -24,8 +24,6 @@ export interface IBillDetailData {
   created: string
   profile: string
   title: string
-  user_id: string
-  photo: string
   nickname: string
   playIds: string[]
   jobIds: string[]
