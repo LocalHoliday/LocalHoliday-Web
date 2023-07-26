@@ -36,6 +36,7 @@ export default function RecommendBook({
       `/recommend/book/${billId}`,
     )
   }
+  console.log(billId)
 
   return (
     <div className="col-lg-4">

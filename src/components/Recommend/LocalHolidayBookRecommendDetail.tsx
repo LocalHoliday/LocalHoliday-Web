@@ -2,28 +2,31 @@ import { useRouter } from 'next/router'
 import RecommendBookDetail from '../Common/RecommendTemplate/BookDetail/RecommendBookDetail'
 import useGetBookDetail from '@/hooks/recommend/useGetBookDetail'
 import Spinner from '../Common/Spinner'
+import { useParams } from 'next/navigation'
 
 export default function LocalHolidayBookRecommendDetail() {
   const { query } = useRouter()
-  const billId = query.billId
-  const { data, isLoading } = useGetBookDetail(billId as string)
-  console.log(data)
+  console.log(query)
+  const billId = query.id
+  const { data: bookData, isLoading: bookLoading } = useGetBookDetail(
+    billId as string,
+  )
 
   return (
     <>
-      {isLoading ? (
+      {bookLoading ? (
         <Spinner />
-      ) : data == null ? (
+      ) : bookData == null ? (
         <h1>준비중입니당</h1>
       ) : (
         <>
           <RecommendBookDetail
-            title={data?.review.title as string}
-            author={data?.review.nickname as string}
-            playIds={data?.review.playIds as string[]}
-            jobIds={data?.review.jobIds as string[]}
-            img={data?.review.photo as string}
-            content={data?.review.content as string}
+            title={bookData?.review.title as string}
+            nickname={bookData?.review.nickname as string}
+            profile={bookData.review.profile as string}
+            playIds={bookData?.review.playIds as string[]}
+            jobIds={bookData?.review.jobIds as string[]}
+            content={bookData?.review.content as string}
           />
         </>
       )}

@@ -10,11 +10,12 @@ import { getPlayDetail } from '@/apis/getPlayDetail'
 import { IJobDetail } from '@/types/job'
 import { getJobDetail } from '@/apis/getJobDetail'
 import CourseWorkDetail from '../CourseDetail/CourseWorkDetail'
+import { useParams } from 'next/navigation'
 
 interface RecommendBookDetailProps {
   title: string
-  author: string
-  img: string
+  nickname: string
+  profile: string
   content: string
   playIds: string[]
   jobIds: string[]
@@ -26,25 +27,36 @@ interface ColorProps {
 
 export default function RecommendBookDetail({
   title,
-  author,
-  img,
+  nickname,
+  profile,
   content,
   playIds,
   jobIds,
 }: RecommendBookDetailProps) {
-  const playData: IPlayItem[] = []
-  const jobData: IJobDetail[] = []
+  const params = useParams()
+  console.log('params', params)
+  const [playData, setPlayData] = useState<IPlayItem[]>([])
+  const [jobData, setJobData] = useState<IJobDetail[]>([])
+
   useEffect(() => {
     playIds.map((item) => {
       const data = getPlayDetail(item)
-      data.then((item) => playData.push(item.result))
+      data.then((item) => {
+        if (playData != undefined) {
+          setPlayData([...playData, item.result])
+        }
+      })
     })
   }, [])
 
   useEffect(() => {
     jobIds.map((item) => {
       const data = getJobDetail(item)
-      data.then((item) => jobData.push(item.job))
+      data.then((item) => {
+        if (jobData != undefined) {
+          setJobData([...jobData, item.job])
+        }
+      })
     })
   }, [])
   return (
@@ -53,15 +65,15 @@ export default function RecommendBookDetail({
         <SubContainer>
           <AuthorInfoField>
             <Title>{title}</Title>
-            <Author>{author}</Author>
+            <Author>{nickname}</Author>
           </AuthorInfoField>
           <div className="pt-30"></div>
-          <Image src={img} width={500} height={500} alt="디테일" priority />
+          <Image src={profile} width={500} height={500} alt="디테일" priority />
           <div className="pt-30"></div>
           <ContentContainer>{content}</ContentContainer>
           <div className="pt-100"></div>
           <div style={{ display: 'flex' }}>
-            <Body color="main">{author}</Body>
+            <Body color="main">{nickname}</Body>
             <Body color="gray"> 님의 로컬일자리</Body>
           </div>
           <div className="pt-50"></div>
@@ -80,13 +92,13 @@ export default function RecommendBookDetail({
           ))}
           <div className="pt-60"></div>
           <div style={{ display: 'flex' }}>
-            <Body color="main">{author}</Body>
+            <Body color="main">{nickname}</Body>
             <Body color="gray"> 님의 로컬놀거리</Body>
           </div>
           <div className="pt-50"></div>
           <div className="row col-lg-12">
             <div className="col-lg-12">
-              {playData.map((item) => (
+              {playData?.map((item) => (
                 <CoursePlayDetail
                   key={item.uuid}
                   title={item.name}
