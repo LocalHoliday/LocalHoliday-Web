@@ -15,8 +15,6 @@ export default function SearchDetail({
   info,
   hostPhone,
 }: SearchItemProps) {
-  console.log(name)
-  console.log(isWork)
   return (
     <>
       {isWork ? (
@@ -50,7 +48,7 @@ export default function SearchDetail({
               <div style={{ display: 'flex' }}>
                 <styles.CategoryTitle>급여</styles.CategoryTitle>
                 <div className="pl-30"></div>
-                <styles.Body>{workPay}</styles.Body>
+                <styles.Body>{workPay == 0 ? '시급협의' : workPay}</styles.Body>
               </div>
               <div className="pt-20"></div>
               <div style={{ display: 'flex' }}>

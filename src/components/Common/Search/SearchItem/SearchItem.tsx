@@ -83,7 +83,7 @@ export default function SearchItem({
           <div style={{ display: 'flex' }}>
             <styles.CategoryBox>급여</styles.CategoryBox>
             <div className="pl-20"></div>
-            <styles.Body>{workPay}</styles.Body>
+            <styles.Body>{workPay === 0 ? '시급협의' : workPay}</styles.Body>
           </div>
         </div>
       ) : (
