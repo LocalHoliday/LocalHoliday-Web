@@ -23,17 +23,13 @@ export default function Recommend() {
         breadImgIdx={0}
         isArea={false}
       />
-      {bookLoading || recommendLoading ? (
-        <Spinner />
-      ) : (
-        <>
-          <LocalHolidayRecommend
-            recommendList={recommendList as GetRecommendListRes}
-          />
-          <div className="pt-50"></div>
-          <LocalHolidayBook bookList={bookList as GetBookListRes} />
-        </>
-      )}
+      <>
+        <LocalHolidayRecommend
+          recommendList={recommendList as GetRecommendListRes}
+        />
+        <div className="pt-50"></div>
+        <LocalHolidayBook bookList={bookList as GetBookListRes} />
+      </>
       <div className="pt-100"></div>
     </>
   )

@@ -6,9 +6,13 @@ import Image from 'next/image'
 import { media } from '@/styles/media'
 import useResponsiveMobile from '@/hooks/responsive/useResponsiveMobile'
 import LogoImg from '../../../../public/assets/img/logo.svg'
+import Modal from 'react-modal'
+import { useState } from 'react'
 
 export default function Nav() {
   const isMobile = useResponsiveMobile()
+  const [loginModal, setLoginModel] = useState(false)
+
   return (
     <NavContainer>
       <Navbar expand="lg">
@@ -57,9 +61,14 @@ export default function Nav() {
                           alignItems: 'center',
                         }}
                       >
-                        <Link href="/login">
+                        <Login
+                          onClick={() => {
+                            setLoginModel(true)
+                          }}
+                        >
                           <SmallFont>로그인</SmallFont>
-                        </Link>
+                          {}
+                        </Login>
                         <Link href="/signup">
                           <SmallFont>회원가입</SmallFont>
                         </Link>
@@ -124,6 +133,18 @@ const Logo = styled.div`
     img {
       width: 100px;
     }
+  }
+`
+const Login = styled.div`
+  cursor: pointer;
+
+  margin-left: 3rem;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: var(--font-H4);
+  &:hover {
+    color: var(--color-primary);
+    font-weight: var(--font-M);
   }
 `
 

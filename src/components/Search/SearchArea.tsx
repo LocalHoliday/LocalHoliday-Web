@@ -56,79 +56,75 @@ export default function SearchArea() {
 
   return (
     <>
-      {isPlayLoading || isJobLoading ? (
-        <Spinner />
-      ) : (
-        <>
-          <BreadCrumb
-            colorIdx={3}
-            isArea={true}
-            title={`${areaName}에서 로컬홀리데이를 즐겨보세요`}
-            subTitle=""
-          />
-          <TabBarContainer>
-            <TabBarList>
-              <TabBarItem click={workClick} onClick={onWorkClick}>
-                로컬 일거리
-              </TabBarItem>
-              <div className="pl-40"></div>
-              <TabBarItem click={playClick} onClick={onPlayClick}>
-                로컬 놀거리
-              </TabBarItem>
-            </TabBarList>
-          </TabBarContainer>
-          <ContentContainer>
-            {workClick ? (
-              <>
-                <div className="row col-lg-12">
-                  <div
-                    className="col"
-                    style={{ display: 'flex', flexWrap: 'wrap' }}
-                  >
-                    {jobData?.jobs.map((item) => (
-                      <SearchItem
-                        key={item.uuid}
-                        id={item.uuid}
-                        isWork={true}
-                        area={area as string}
-                        name={item.name}
-                        location={item.addr}
-                        workPay={item.pay}
-                        photo={item.photo}
-                        workDate={`${item.startTime.substring(
-                          0,
-                          10,
-                        )} ~ ${item.endTime.substring(0, 10)}`}
-                      />
-                    ))}
-                  </div>
+      <>
+        <BreadCrumb
+          colorIdx={3}
+          isArea={true}
+          title={`${areaName}에서 로컬홀리데이를 즐겨보세요`}
+          subTitle=""
+        />
+        <TabBarContainer>
+          <TabBarList>
+            <TabBarItem click={workClick} onClick={onWorkClick}>
+              로컬 일거리
+            </TabBarItem>
+            <div className="pl-40"></div>
+            <TabBarItem click={playClick} onClick={onPlayClick}>
+              로컬 놀거리
+            </TabBarItem>
+          </TabBarList>
+        </TabBarContainer>
+        <ContentContainer>
+          {workClick ? (
+            <>
+              <div className="row col-lg-12">
+                <div
+                  className="col"
+                  style={{ display: 'flex', flexWrap: 'wrap' }}
+                >
+                  {jobData?.jobs.map((item) => (
+                    <SearchItem
+                      key={item.uuid}
+                      id={item.uuid}
+                      isWork={true}
+                      area={area as string}
+                      name={item.name}
+                      location={item.addr}
+                      workPay={item.pay}
+                      photo={item.photo}
+                      workDate={`${item.startTime.substring(
+                        0,
+                        10,
+                      )} ~ ${item.endTime.substring(0, 10)}`}
+                    />
+                  ))}
                 </div>
-              </>
-            ) : (
-              <>
-                <div className="row col-lg-12">
-                  <div
-                    className="col"
-                    style={{ display: 'flex', flexWrap: 'wrap' }}
-                  >
-                    {playList?.map((item) => (
-                      <SearchItem
-                        key={item.uuid}
-                        id={item.uuid}
-                        isWork={false}
-                        area={area as string}
-                        name={item.name}
-                        location={item.addr}
-                        photo={item.photo}
-                      />
-                    ))}
-                  </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="row col-lg-12">
+                <div
+                  className="col"
+                  style={{ display: 'flex', flexWrap: 'wrap' }}
+                >
+                  {playList?.map((item) => (
+                    <SearchItem
+                      key={item.uuid}
+                      id={item.uuid}
+                      isWork={false}
+                      area={area as string}
+                      name={item.name}
+                      location={item.addr}
+                      photo={item.photo}
+                    />
+                  ))}
                 </div>
-              </>
-            )}
-          </ContentContainer>
-        </>
-      )}
+              </div>
+            </>
+          )}
+        </ContentContainer>
+      </>
     </>
   )
 }
